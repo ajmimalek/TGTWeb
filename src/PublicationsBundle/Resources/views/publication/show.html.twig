@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Publication</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id_pub</th>
+                <td>{{ publication.id }}</td>
+            </tr>
+            <tr>
+                <th>Contenue</th>
+                <td>{{ publication.contenue }}</td>
+            </tr>
+            <tr>
+                <th>Video</th>
+                <td>{{ publication.video }}</td>
+            </tr>
+            <tr>
+                <th>Localisation</th>
+                <td>{{ publication.localisation }}</td>
+            </tr>
+            <tr>
+                <th>Datepub</th>
+                <td>{% if publication.datePub %}{{ publication.datePub|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Ratingpub</th>
+                <td>{{ publication.ratingPub }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('publication_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('publication_edit', { 'id_pub': publication.id }) }}">Edit</a>
+        </li>
+    </ul>
+{% endblock %}

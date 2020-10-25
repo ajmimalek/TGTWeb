@@ -1,0 +1,47 @@
+{% extends 'back.html.twig' %}
+{% block egg %}
+    <h1>Liste d'Organisations</h1>
+    <ul>
+        <li>
+            <a href="{{ path('back_AddOrganiation') }}">Ajouter Organisation</a>
+        </li>
+        <li>
+            <a href="{{ path('back_Casting') }}" >Gestion des Casting</a>
+        </li>
+        <li>
+            <a href="{{ path('back_Events') }}" >Gestion des Evenements</a>
+        </li>
+    </ul>
+<table class="table" style="width: 100%; ">
+        <tr style="background: #343A40;color: white;border: none; ">
+
+            <th style=" text-align: center;">Nom d'Organisation</th>
+            <th style=" text-align: center;">Adresse</th>
+            <th style=" text-align: center;">Numero de téléphone </th>
+            <th style=" text-align: center;">Adresse Email</th>
+            <th style=" text-align: center;">Login</th>
+            <th style=" text-align: center;">Mot de passe </th>
+            <th style=" text-align: center;">Actions</th>
+        </tr>
+
+        <tbody>
+        {% for organisation in organisations %}
+            <tr>
+                <td>{{ organisation.nomOrganisation }}</td>
+                <td>{{ organisation.adresseOrganisation }}</td>
+                <td>{{ organisation.telOrganisation }}</td>
+                <td>{{ organisation.emailOrganisation }}</td>
+                <td>{{ organisation.loginOrganisation }}</td>
+                <td>{{ organisation.passwordOrganisation }}</td>
+                <td><a href="{{ path('back_EditOrganiation',{'id':organisation.id}) }}"> <img src="{{ asset ('back/img/ed.jpg') }}" width="30" height="30"> </a>
+                <a href="{{ path('back_DeleteOrganiation',{'id':organisation.id}) }}"><img src="{{ asset ('back/img/rm.jpg') }}" width="30" height="30"></a></td>
+
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

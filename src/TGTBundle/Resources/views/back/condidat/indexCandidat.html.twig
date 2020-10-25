@@ -1,0 +1,39 @@
+{% extends 'back.html.twig' %}
+{% block egg %}
+
+    <a href="{{ path('back_AddCandidat') }}"><li> affecter un entretient</li></a>
+    <br><br>
+
+    <h2>Liste Des Produits</h2>
+    <br>
+    <table class="table" style="width: 100%; ">
+
+        <tr style="background: #343A40;color: white;border: none; ">
+            <th style=" text-align: center;padding: 18px;border: none;">Id</th>
+            <th style=" text-align: center;padding: 18px;border: none;">Nomc</th>
+            <th style=" text-align: center;padding: 18px;border: none;">Cincondidat</th>
+            <th style=" text-align: center;padding: 18px;border: none;">Cv</th>
+            <th style=" text-align: center;padding: 18px;border: none;">Motivation</th>
+            <th style=" text-align: center;padding: 18px;border: none;">Tel</th>
+            <th style=" text-align: center;padding: 18px;border: none;">modifier</th>
+            <th style=" text-align: center;padding: 18px;border-top-right-radius: 15px;border: none;">Supprimer</th>
+        </tr>
+        {% for candidat in candidat %}
+            <tr>
+                <th style=" text-align: center;"><{{ candidat.id }}</th>
+                <th style=" text-align: center;">{{ candidat.nomC }}</th>
+                <th style=" text-align: center;">{{ candidat.cinCondidat }}</th>
+                <th style=" text-align: center;">{{ candidat.cv }}</th>
+                <th style=" text-align: center;">{{ candidat.motivation }}</th>
+                <th style=" text-align: center;">{{ candidat.tel }}</th>
+                <th style="width: 25px;"><a href="{{ path('back_EditCandidat', { 'id': candidat.id }) }}"><center><img src="{{ asset('back/img/ed.jpg') }}" /></center></a></th>
+                <th style="width: 25px;"><a href="{{ path('back_DeleteCandidat',{ 'id': candidat.id }) }}"><center><img src="{{ asset('back/img/rm.jpg') }}" /></center></a></th>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+
+{% endblock %}
+
+

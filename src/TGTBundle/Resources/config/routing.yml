@@ -1,0 +1,96 @@
+forum_front:
+    resource: "@TGTBundle/Resources/config/forum/front.yml"
+    prefix:   /forum
+
+forum_back:
+    resource: "@TGTBundle/Resources/config/forum/admin.yml"
+    prefix:   /admin/forum
+
+###########################################################################
+
+
+TGT_organisation:
+    resource: "@TGTBundle/Resources/config/organisation/front.yml"
+    prefix:   /organisation
+
+
+TGT_organisation_back:
+    resource: "@TGTBundle/Resources/config/organisation/admin.yml"
+    prefix:   /admin/organisation
+
+    ###########################################################################
+
+google_map:
+    path:     /map
+    defaults: { _controller: TGTBundle:Map:index }
+
+Multisms:
+    path:     /multisms
+    defaults: { _controller: TGTBundle:Multisms:index }
+
+    ############FRONT############
+#Candidat
+candidat_new:
+    path:     /newCandidat
+    defaults: { _controller: TGTBundle:Candidat:new }
+
+candidat_show:
+    path:     /showCandidat
+    defaults: { _controller: TGTBundle:Candidat:index }
+
+candidat_edit:
+    path:     /editCandidat/{id}/
+    defaults: { _controller: TGTBundle:Candidat:edit }
+
+candidat_delete:
+    path:     /deleteCandidat/{id}/
+    defaults: { _controller: TGTBundle:Candidat:delete }
+
+#Contrat
+contrat_new:
+    path:     /newContrat
+    defaults: { _controller: TGTBundle:Contrat:new }
+
+contrat_show:
+    path:     /showContrat
+    defaults: { _controller: TGTBundle:Contrat:index }
+
+contrat_edit:
+    path:     /editContrat/{id}/
+    defaults: { _controller: TGTBundle:Contrat:edit }
+
+contrat_delete:
+    path:     /deleteContrat/{id}/
+    defaults: { _controller: TGTBundle:Contrat:delete }
+
+#Entretien
+entretien_new:
+    path:     /newEntretien
+    defaults: { _controller: TGTBundle:Entretien:new }
+
+entretien_show:
+    path:     /showEntretien
+    defaults: { _controller: TGTBundle:Entretien:index }
+
+entretien_edit:
+    path:     /editEntretien/{id}/
+    defaults: { _controller: TGTBundle:Entretien:edit }
+
+entretien_delete:
+    path:     /deleteEntretien/{id}/
+    defaults: { _controller: TGTBundle:Entretien:delete }
+
+    ############BACK############
+#backUtilisateur
+back_Utilisateur:
+    path:     /admin/backUtilisateur
+    defaults: { _controller: TGTBundle:Back:indexUtilisateur }
+
+
+
+#BackEntretient
+back_Entretient:
+    path:     /admin/bachEntretient
+    defaults: { _controller: TGTBundle:Back:indexEntretient }
+
+

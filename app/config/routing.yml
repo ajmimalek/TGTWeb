@@ -1,0 +1,56 @@
+publications_commentaire_publication:
+    resource: "@PublicationsBundle/Controller/CommentairePublicationController.php"
+    type:     annotation
+
+publications_categorie_publication:
+    resource: "@PublicationsBundle/Controller/CategoriePublicationController.php"
+    type:     annotation
+
+publications_publication:
+    resource: "@PublicationsBundle/Controller/PublicationController.php"
+    type:     annotation
+
+publications:
+    resource: "@PublicationsBundle/Resources/config/routing.yml"
+    prefix:   /publications
+
+ecommerce:
+    resource: "@EcommerceBundle/Resources/config/routing.yml"
+    prefix:   /
+
+tgt_categorie_formation:
+    resource: "@FormationsBundle/Controller/CategorieFormationController.php"
+    type:     annotation
+
+tgt_formation:
+    resource: "@FormationsBundle/Controller/formationController.php"
+    type:     annotation
+
+tgt_cour:
+    resource: "@FormationsBundle/Controller/courController.php"
+    type:     annotation
+
+tgt:
+    resource: "@FormationsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+tgttgt:
+    resource: "@TGTBundle/Resources/config/routing.yml"
+    prefix:   /
+
+tgt_entretien:
+    resource: "@TGTBundle/Controller/EntretienController.php"
+    type:     annotation
+
+
+tgt_contrat:
+    resource: "@TGTBundle/Controller/ContratController.php"
+    type:     annotation
+
+tgt_candidat:
+    resource: "@TGTBundle/Controller/CandidatController.php"
+    type:     annotation
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

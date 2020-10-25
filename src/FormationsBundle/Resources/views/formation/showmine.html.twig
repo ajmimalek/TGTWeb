@@ -1,0 +1,35 @@
+ {% extends 'profile.html.twig' %}
+{% block name  %}
+ Ma Liste
+{% endblock%}
+{% block content %}
+<div class="col-md-12" id="postContent" style="display: flex;flex-wrap: wrap">
+    <table>
+        {% for formation in formations %}
+        <div class="col-md-4">
+            <div class="card" style="width: 20rem; margin: 20px;display:flex;flex-wrap: wrap">
+                <img class="card-img-top" width="320" height="240" src="{{ asset('uploads/assets/' ~ formation.image) }}" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Titre : {{ formation.titreFormation }}</h4>
+                    <p class="card-text">Description : {{ formation.descriptionFormation }}</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Duree : {{ formation.dureeFormation }}
+                    </ul>
+                    <a href="{{ path('formation_edit', { 'formation_id': formation.formationid }) }}" class="btn btn-primary">Edit</a>
+                    <a href="{{ path('formation_delete', { 'formation_id': formation.formationid }) }}" class="btn btn-primary">Delete</a>
+                    <a href="{{ path('Simulation', { 'formation_id': formation.formationid }) }}" class="btn btn-primary">Courses</a>
+                </div>
+             </div>
+         </div>
+       </div>
+
+        {% endfor %}
+            </table>
+
+       <div class="col-md-12" style="margin:20px">
+ <center>
+   <a href="{{ path('formation_index') }}" class="btn btn-primary">Liste des Formation</a>
+   </center>
+   </div>
+
+{% endblock %}

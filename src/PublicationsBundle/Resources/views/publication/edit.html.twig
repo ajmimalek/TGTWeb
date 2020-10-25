@@ -1,0 +1,40 @@
+{% extends "profile.html.twig" %}
+{% block title %} Modifier Publication {% endblock %}
+{% block name %} Modifier Publication {% endblock %}
+{% block content %}
+    <div class="col-12 col-lg-6">
+        <div class="contact-content ">
+            <div class="contact-form-area">
+                {{ form_start(edit_form) }}
+                {{ form_widget(edit_form.contenue) }}
+                <div class="single-contact-info d-flex align-items-center">
+                    <div class="icon">
+                        <img src="{{ asset('front/img/core-img/placeholder.png') }}" alt="">
+                    </div>
+                    <h6>Je suis là</h6>
+                </div>
+                <br>
+                {{ form_widget(edit_form.localisation) }}
+                <div class="single-contact-info d-flex align-items-center">
+                    <div class="icon">
+                        <img src="{{ asset('front/img/core-img/controls.png') }}" alt="">
+                    </div>
+                    <h6>Catégories</h6>
+                </div>
+                <br>
+                {{ form_widget(edit_form.categorie) }}
+                <br>
+                <div class="single-contact-info d-flex align-items-center">
+                    <div class="icon">
+                        <img src="{{ asset('front/img/core-img/photo.png') }}" alt="">
+                    </div>
+                    <h6>Video</h6>
+                </div>
+                <br>
+                {{ form_widget(edit_form.video) }}
+                {{ form_widget(edit_form.Publier) }}
+                {{ form_end(edit_form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

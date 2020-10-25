@@ -1,0 +1,37 @@
+back_Organiation:
+  path:     /backOrganisation
+  defaults: { _controller: TGTBundle:Back:indexOrganisation }
+
+
+back_AddOrganiation:
+  path:     /addOrganisation
+  defaults: { _controller: TGTBundle:Back:addOrganisation }
+
+
+back_EditOrganiation:
+  path:     /editOrganisation/{id}
+  defaults: { _controller: TGTBundle:Back:editOrganisation }
+
+
+back_DeleteOrganiation:
+  path:     /deleteOrganisation/{id}
+  defaults: { _controller: TGTBundle:Back:deleteOrganisation }
+
+
+
+
+event_back:
+  resource: "@TGTBundle/Resources/config/organisation/event/admin.yml"
+  prefix:   /event
+
+
+casting_back:
+  resource: "@TGTBundle/Resources/config/organisation/casting/admin.yml"
+  prefix:   /casting
+
+
+espaceE_back:
+  resource: "@TGTBundle/Resources/config/organisation/espaceE/admin.yml"
+  prefix:   /espaceE
+
+

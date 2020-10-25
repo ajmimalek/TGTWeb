@@ -1,0 +1,14 @@
+{% extends 'profile.html.twig' %}
+ {% block title %} Ajouter Commentaire {% endblock %}
+{% block content %}
+    <center>
+
+        {{ form(form_comment) }}
+        <ul>
+            <li>
+                <a href="{{ path('commentaire_show', {'id' : cour.courid }) }}" class="btn musica-btn btn-3 m-2">Back to the list</a>
+            </li>
+        </ul>
+
+    </center>
+{% endblock %}

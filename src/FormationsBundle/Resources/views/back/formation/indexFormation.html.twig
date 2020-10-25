@@ -1,0 +1,30 @@
+{% extends 'back.html.twig' %}
+
+{% block egg %}
+<h1>Liste des Formations</h1>
+<ul>
+    <li>
+        <a href="{{ path('back_AddFormation') }}">Ajouter un Formation</a>
+    </li>
+</ul>
+    <table border="1"width="100%">
+        <thead>
+        <tr>
+            <th>Titre Formation</th>
+            <th>Description</th>
+            <th>dureeFormation</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for f in formations %}
+            <tr>
+                <td>{{ formation.titreFormation}}</td>
+                <td>{{ formation.descriptionFormation }}</td>
+                <td>{{ formation.dureeFormation }}</td>
+                <td><a href="{{ path('back_EditFormation', { 'id': formation.formationid }) }}" class="btn btn-primary">Edit</a>
+                <a href="{{ path('back_DeleteFormation', { 'id': formation.formationid }) }}" class="btn btn-primary">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'profile.html.twig' %}
+{% block name %} Details Casting {% endblock %}
+
+{% block content %}
+
+    <div class="about-us-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <!-- About Thumbnail -->
+                <div class="col-12 col-lg-6">
+                    <div class="about-thumbnail mb-100">
+                        <img src="{{ asset('uploads/images/' ~ casting.ImageCasting) }}" alt="">
+                    </div>
+                </div>
+                <!-- About Content -->
+                <div class="col-12 col-lg-6">
+                    <div class="about--content mb-100">
+                        <h4>{{ casting.titreCasting }}</h4>
+                        {{ casting.descriptionCasting | raw}}
+                        <!-- Key Notes -->
+                        <ul class="key-notes">
+                            <li><div class="check"><img src="{{ asset('front/img/core-img/check.png') }}" alt=""></div>Adresse: {{ casting.adresseCasting }}</li>
+                            <li><div class="check"><img src="{{ asset('front/img/core-img/check.png') }}" alt=""></div>Date : {{ casting.dateCasting|date }}</li>
+                            <li><div class="check"><img src="{{ asset('front/img/core-img/check.png') }}" alt=""></div>Date limite pour postuler : {{ casting.dateLP|date }}</li>
+                        </ul>
+                        <a href="{{ path('candidat_new', { 'id': casting.id }) }}" class="btn musica-btn m-2">Je postule au Casting</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

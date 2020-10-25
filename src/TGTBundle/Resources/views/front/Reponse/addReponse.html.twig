@@ -1,0 +1,21 @@
+{% extends 'profile.html.twig' %}
+
+{% block content %}
+    <div class="align-self-center ">
+          <h1>ajouter une reponse </h1>
+        {{ form_start(form, {'attr': {'class' : 'form-row'}} ) }}
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                {{ form_label(form.contenuReponse, 'ajouter une reponse ', {'attr': {'class' : 'form-group col-md-6'}} ) }}
+                {{ form_widget(form.contenuReponse, {'attr': {'class' : 'form-control'}}) }}
+            </div>
+
+            <div class="form-group col-md-6">
+                {{ form_widget(form.Valider, {'attr': {'class' : 'btn btn-primary btn-round'}}) }}
+
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'front.html.twig' %}
+
+{% block content %}
+
+    <div class="career-timeline-area section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h2>LES REPONSES </h2>
+                        <h6>liste des reponses </h6>
+                    </div>
+                </div>
+            </div>
+
+
+            {% for reponses in reponses %}
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card ">
+                            <div class="card-header d-flex">
+
+                                <div class="p-2 mr-auto">
+                                    <h3>Response : {{ reponses.id }}</h3>
+                                </div>
+
+
+                                <div class="p-2 ">
+                                    <p><i class="fa fa-thumbs-up fa-3x"></i> <span style="font-size: 20px;"
+                                                                                   class="badge badge-pill badge-primary">{{ reponses.likeReponce }}</span>
+                                    </p>
+                                </div>
+                                <div class="p-2">
+                                    <i class="fa fa-thumbs-down fa-3x"></i> <span style="font-size: 20px;"
+                                                                                  class="badge badge-pill badge-primary">{{ reponses.dislikeReponse }}</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ reponses.date|date }}</h5>
+                                <p class="card-text">{{ reponses.contenuReponse }}</p>
+
+                                <a href="{{ path ('Reponse_edit',{'id':reponses.id } ) }} " class="btn musica-btn">modifier </a>
+                                <a href="{{ path ('Reponse_delete',{'id':reponses.id } ) }}" class="btn musica-btn">supprimer </a>
+
+                            </div>
+                            <div class="card-footer d-flex">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+            {% endfor %}
+
+
+        </div>
+
+        <!-- Side Thumbs -->
+        <div class="first-img">
+            <img src="{{ asset('img/bg-img/man.png') }}" alt="">
+        </div>
+        <div class="second-img">
+            <img src="{{ asset('img/bg-img/microphone.png') }}" alt="">
+        </div>
+    </div>
+{% endblock %}

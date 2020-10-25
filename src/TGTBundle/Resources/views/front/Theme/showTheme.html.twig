@@ -1,0 +1,41 @@
+{% extends 'front.html.twig' %}
+
+{% block content %}
+
+    <div class="align-self-center " style="background-image: url({{asset('front/img/bg-img/bg-1.jpg')}});">
+        <!-- ##### Music Player Area Start ##### -->
+        <div class="music-player-area section-padding-100">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="music-player-slides owl-carousel">
+
+                            <!-- Single Music Player -->
+                            {% for theme in theme%}
+                                <div class="single-music-player" style="height: 450px;">
+                                    <img src="{{ asset('front/img/bg-img/fs2.jpg') }}" alt="Card image cap">
+
+                                    <div style="color: #ffff;" class="music-info d-flex justify-content-between">
+                                        <div class="music-text">
+                                            <h4 style="color: #ffff;"  class="card-title">{{ theme.nomTheme }}</h4>
+                                            <p class="card-text">  {{ theme.libelleTheme }} </p>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="card-text">{{ theme.typeTheme }} </li>
+                                                <li   class="card-text">  {{ theme.descriptionTheme }} </li>
+                                               <li> <a href="{{ path('Theme_question', { 'id': theme.id }) }}" class="btn musica-btn m-2">les questions</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
+
+
+

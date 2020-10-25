@@ -1,0 +1,23 @@
+{% extends 'profile.html.twig' %}
+{% block name  %}
+   Edit cours
+{% endblock%}
+{% block content %}
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('cour_index') }}">Back to the list</a>
+        </li>
+
+        <li>
+            <a href="{{ path('cour_delete', { 'cour_id': cour.courid }) }}" class="btn btn-primary">delete</a>
+            <a href="{{ path('cour_delete', { 'cour_id': cour.courid }) }}" class="btn btn-primary">delete</a>
+        </li>
+
+    </ul>
+{% endblock %}

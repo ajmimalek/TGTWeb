@@ -1,0 +1,44 @@
+{% extends 'back.html.twig' %}
+
+{% block egg %}
+<h1>Liste des Evenements</h1>
+    <ul>
+        <li>
+            <a href="{{ path('back_AddEvents') }}">Ajouter un evenement</a>
+        </li>
+    </ul>
+
+
+        <table class="table" style="width: 100%; ">
+            <tr style="background: #343A40;color: white;border: none; ">
+
+            <th style=" text-align: center;">Titre Evenement</th>
+        <th style=" text-align: center;">Description</th>
+        <th style=" text-align: center;">Theme</th>
+        <th style=" text-align: center;">Adresse</th>
+        <th style=" text-align: center;">Date Events</th>
+        <th style=" text-align: center;">Prix</th>
+        <th style=" text-align: center;">Image</th>
+        <th style=" text-align: center;">Actions</th>
+    </tr>
+
+     <tbody>
+     {% for event in events %}
+         <tr>
+             <td>{{ event.titreEvents }}</td>
+             <td>{{ event.descriptionEvents|raw }}</td>
+             <td>{{ event.themeEvents }}</td>
+             <td>{{ event.adresseEvents }}</td>
+             <td>{% if event.dateEvents %}{{ event.dateEvents|date('Y-m-d H:i:s') }}{% endif %}</td>
+             <td>{{ event.prixEvents }}</td>
+             <td><img style="width: 190px;" height="140px" src="{{ asset('uploads/images/' ~ event.imageEvents ) }}"></td>
+             <td><a href="{{ path('back_EditEvents',{'id':event.id}) }}"> <img src="{{ asset ('back/img/ed.jpg') }}" width="30" height="30"> </a>
+                 <a href="{{ path('back_DeleteEvents',{'id':event.id}) }}"><img src="{{ asset ('back/img/rm.jpg') }}" width="30" height="30"></a></td>
+
+         </tr>
+     {% endfor %}
+     </tbody>
+ </table>
+
+
+    {% endblock %}

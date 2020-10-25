@@ -1,0 +1,38 @@
+content_path:
+    path: /content
+    defaults: {_controller: FormationsBundle:Default:index}
+
+#BackFormation
+back_Formation:
+    path:     /admin/backFormation
+    defaults: { _controller: FormationsBundle:Back:indexFormation }
+
+#BackFormations
+back_indexFormation:
+    path:     /admin/indexFormation
+    defaults: { _controller: FormationsBundle:Back:indexFormation }
+
+
+back_AddFormation:
+    path:     /admin/addFormation
+    defaults: { _controller: FormationsBundle:Back:newFormation }
+
+
+back_EditFormation:
+    path:     /admin/editFormation/{id}
+    defaults: { _controller: FormationsBundle:Back:editFormation }
+
+
+back_DeleteFormation:
+    path:     /admin/DeleteFormation/{id}
+    defaults: { _controller: FormationsBundle:Back:DeleteFormation }
+
+commentaire_new:
+    path:     /Commentaire_new/{id}/
+    defaults: { _controller: FormationsBundle:Commentaire:newCom }
+
+
+commentaire_show:
+    path:     /commentaire_show/{id}/
+    defaults: { _controller: FormationsBundle:cour:comments }
+

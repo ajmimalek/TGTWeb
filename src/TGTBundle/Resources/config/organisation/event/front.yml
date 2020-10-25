@@ -1,0 +1,20 @@
+#Events
+Events_add:
+  path: /addEvents
+  defaults: { _controller: TGTBundle:Events:new }
+
+Events_show:
+  path: /showEvents
+  defaults: { _controller: TGTBundle:Events:index }
+
+Events_edit:
+  path: /editEvents/{id}/
+  defaults: { _controller: TGTBundle:Events:edit }
+
+Events_delete:
+  path: /deleteEvents/{id}/
+  defaults: { _controller: TGTBundle:Events:delete }
+
+Events_details:
+  path: /detailsEvents/{id}/
+  defaults: { _controller: TGTBundle:Events:show }

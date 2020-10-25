@@ -1,0 +1,31 @@
+<h1 style="text-align: center;color: black"> contra  </h1><br>
+<img src="C:\wamp64\www\pidev\PROJET-SYMFONY-GENTREPOT\Gentrepot\web\uploads\images\gentropot.jpg" alt="" width="221" height="228" data-ww="221px" data-hh="228px" >
+<div class="container-fluida" style="align-content: center">
+    {% for e in date %}
+
+
+ <p>                                 Contrat de production d’œuvre<br><br>
+    Entre les soussignés :<br>
+        Le Centre d’art . . . . mersonaire . . . . . . . . . . . . . . . . . . .<br>
+        Forme juridique:
+          Dont le siège est à: monplaisire tunis<br>
+          Représenté par:  hamadi abid<br>
+    En sa qualité de:<br>
+      Ci-après dénommé Le Centre d’art D’une part,<br>
+    et
+    L’Artiste . . . . . . . .isslem. . . . .<br>
+    Adresse:
+    n° de SIRET / n° MDA / n° de Sécurité sociale:<br>
+    Ci-après dénommé L’Artiste<br><br>
+    et
+    la durer de satge est de . . . . . . . . . . {{ e.dureeContart}} . . . . . . . . . . . . . . . . . ans
+    Forme juridique:<br>
+    n° RCS:<br><br>
+    Siège social:
+    Représenté par: et le salaire est {{ e.salaire}}
+    En sa qualité de:<br><br>
+    Ci-après dénommée La Galerie D’autre part,<br>
+     signature<br>
+
+ </p>
+{% endfor %}

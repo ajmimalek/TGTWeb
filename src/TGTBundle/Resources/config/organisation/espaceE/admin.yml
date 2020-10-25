@@ -1,0 +1,59 @@
+
+#BackEntretient
+back_Entretient:
+  path:     /admin/backEntretient
+  defaults: { _controller: TGTBundle:Back:indexEntretient }
+
+back_AddEntretient:
+  path:     /admin/addEntretient
+  defaults: { _controller: TGTBundle:Back:addEntretient }
+
+
+back_EditEntretient:
+  path:     /admin/editEntretient/{id}
+  defaults: { _controller: TGTBundle:Back:editEntretient }
+
+
+back_DeleteEntretient:
+  path:     /admin/deleteEntretient/{id}
+  defaults: { _controller: TGTBundle:Back:deleteEntretient }
+
+#BackContrat
+back_Contrat:
+  path:     /admin/backContrat
+  defaults: { _controller: TGTBundle:Back:indexContrat }
+
+back_AddContrat:
+  path:     /admin/addContrat
+  defaults: { _controller: TGTBundle:Back:addContrat }
+
+
+back_EditContrat:
+  path:     /admin/editContrat/{id}
+  defaults: { _controller: TGTBundle:Back:editContrat }
+
+
+back_DeleteContrat:
+  path:     /admin/deleteContrat/{id}
+  defaults: { _controller: TGTBundle:Back:deleteContrat }
+
+#BackCandidat
+back_Candidat:
+  path:     /admin/backCandidat
+  defaults: { _controller: TGTBundle:Back:indexCandidat }
+
+back_AddCandidat:
+  path:     /admin/addCandidat
+  defaults: { _controller: TGTBundle:Back:addCandidat }
+
+
+back_EditCandidat:
+  path:     /admin/editCandidat/{id}
+  defaults: { _controller: TGTBundle:Back:editCandidat }
+
+
+back_DeleteCandidat:
+  path:     /admin/deleteCandidat/{id}
+  defaults: { _controller: TGTBundle:Back:deleteCandidat }
+
+

@@ -1,0 +1,38 @@
+{% extends'profile.html.twig' %}
+{% block content %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col"><center>Commande Effectué Avec Succée</center></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for c in commande %}
+        <tr>
+            <td>Nom :<center>{{ c.nom }}</center></td>
+        </tr>
+        <tr>
+            <td>Prix :<center>{{ c.prix }} DT</center></td>
+        </tr>
+        <tr>
+            <td>Quantité :<center>{{ '1' }} </center> </td>
+        </tr>
+
+        {% endfor %}
+        <tr>
+            <td><h4>Total :</h4> <center>100 DT</center></td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+                <center><h3 style="color: green"> La livraison à domicile dans 4 jours</h3></center>
+                <center><a href="{{ path('afficheproduitfront') }}"><button style="width: 50%" class="btn btn-block btn-light">Continue Shopping</button></a></center>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+{% endblock %}

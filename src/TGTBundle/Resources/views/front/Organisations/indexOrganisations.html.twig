@@ -1,0 +1,35 @@
+{% extends 'profile.html.twig' %}
+{% block title %} Organisations {% endblock %}
+{% block name %} Liste d'Organisation {% endblock %}
+{% block content %}
+
+                    {% for organisation in organisations %}
+<div style="width: 100% ">
+<div class="panel single-accordion">
+
+    <h6><a role="button" class="" aria-expanded="true" aria-controls="{{organisation.id}}" data-toggle="collapse" data-parent="#accordion" href="#{{organisation.id}}">{{ organisation.nomOrganisation }}
+            <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+            <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+        </a></h6>
+    <div id="{{organisation.id}}" class="accordion-content collapse show" style="">
+        <p>A propos:{{ organisation.apropos|raw }}</p>
+        <ul class="key-notes">
+          <li><div class="check"><img src="{{ asset('front/img/core-img/check.png') }}" alt="">Numero de téléphone:{{ organisation.telOrganisation }}</div></li>
+            <li><div class="check"><img src="{{ asset('front/img/core-img/check.png') }}" alt="">Adresse Email: {{ organisation.emailOrganisation }}</div></li>
+             <li><div class="check"><img src="{{ asset('front/img/core-img/check.png') }}" alt="">Adresse : {{ organisation.adresseOrganisation }}</div></li>
+        </ul>
+    </div>
+</div>
+</div>
+    {% endfor %}
+    <br>
+    <!-- ##### Ajout Publication ##### -->
+    <div class="col-12">
+        <div class="elements-title mb-30">
+            <h2>Ajouter une organisation</h2>
+        </div>
+        <div class="musica-buttons-area mb-30" style="text-align: center">
+            <a href="{{ path('Organisations_new') }}" class="btn musica-btn btn-3 m-2">Ajouter</a>
+        </div>
+    </div>
+{% endblock %}

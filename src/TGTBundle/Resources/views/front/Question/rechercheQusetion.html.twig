@@ -1,0 +1,64 @@
+{% extends 'front.html.twig' %}
+
+{% block content %}
+
+
+    <div class="upcoming-shows-area section-padding-100">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h2>chercher une question</h2>
+                        <h6>  chercher   </h6>
+                    </div>
+                </div>
+            </div>
+
+
+            <form  method="post">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="contenu1" id="contenu1" placeholder="saisir de quoi vous chercher ">
+                <div class="input-group-append">
+                    <input  class="btn musica-btn" type="submit" name="chercher" value="chercher">                </div>
+            </div>
+            </form>
+
+
+            <div class="row">
+                <div class="col-12">
+                    <!-- Upcoming Shows Content -->
+                    <div class="upcoming-shows-content">
+
+                        <table class=" table table-hover" style="background-color: #FFFFFF">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Contenu</th>
+                                <th scope="col">Date</th>
+                                <th scope="col"><i class="fa fa-thumbs-up fa-2x"></i></th>
+                                <th scope="col"><i class="fa fa-thumbs-down fa-2x"></i></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for questions in questions %}
+                            <tr>
+                                <th scope="row">{{ questions.id }}</th>
+                                <td>{{ questions.contenu }}</td>
+                                <td>{{ questions.dateQuestion|date  }}</td>
+                                <td>{{ questions.likeQuestion }}</td>
+                                <td>{{ questions.dislikeQuestion }}</td>
+                            </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'back.html.twig' %}
+{% block egg %}
+
+    <h1>Casting list</h1>
+    <ul>
+        <li>
+            <a href="{{ path('back_AddCasting') }}">Ajouter Casting</a>
+        </li>
+    </ul>
+
+
+    <table class="table" style="width: 100%; ">
+        <tr style="background: #343A40;color: white;border: none; ">
+
+            <th style=" text-align: center;">Titre Casting</th>
+            <th style=" text-align: center;">Description</th>
+            <th style=" text-align: center;">Date casting</th>
+            <th style=" text-align: center;">Date Limite de postulation</th>
+            <th style=" text-align: center;">Adresse</th>
+            <th style=" text-align: center;">Theme</th>
+            <th style=" text-align: center;">Image</th>
+            <th style=" text-align: center;">Actions</th>
+        </tr>
+
+        <tbody>
+        {% for casting in castings %}
+            <tr>
+
+                <td>{{ casting.titreCasting }}</td>
+                <td>{{ casting.descriptionCasting|raw }}</td>
+                <td>{% if casting.dateCasting %}{{ casting.dateCasting|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if casting.dateLP %}{{ casting.dateLP|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ casting.adresseCasting }}</td>
+                <td>{{ casting.themeCasting }}</td>
+                <td><img style="width: 190px;" height="140px" src="{{ asset('uploads/images/' ~ casting.imageCasting ) }}"></td>
+
+                <td><a href="{{ path('back_EditCasting',{'id':casting.id}) }}"> <img src="{{ asset ('back/img/ed.jpg') }}" width="30" height="30"> </a>
+                    <a href="{{ path('back_DeleteCasting',{'id':casting.id}) }}"><img src="{{ asset ('back/img/rm.jpg') }}" width="30" height="30"></a></td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

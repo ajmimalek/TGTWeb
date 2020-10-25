@@ -1,0 +1,100 @@
+{% extends 'front.html.twig' %}
+
+{% block content %}
+    <div class="upcoming-shows-area section-padding-100" style="background-image: url({{asset('front/img/bg-img/bg-1.jpg')}});">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h2>les questions de ce theme </h2>
+                        <h6>  liste de questions   </h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buy-tickets">
+                <a href="{{ path ('Question_cherche' )  }}" class="btn musica-btn">chercher un question  </a>
+            </div>
+
+            <div class="row">
+
+
+
+                <div class="col-12">
+                    <!-- Upcoming Shows Content -->
+                    <div class="upcoming-shows-content">
+                        {% for Question in Question %}
+
+                            <div class="card ">
+                                <div class="card-header d-flex">
+
+                                    <div class="p-2 mr-auto">
+                                        <h3>Question : {{ Question.id }}</h3>
+                                    </div>
+
+
+                                    <div class="p-2 ">
+                                        <p> <i class="fa fa-thumbs-up fa-3x"></i> <span style="font-size: 20px;" class="badge badge-pill badge-primary">{{ Question.likeQuestion }}</span></p>
+                                    </div>
+                                    <div class="p-2">
+                                        <i class="fa fa-thumbs-down fa-3x"></i> <span style="font-size: 20px;" class="badge badge-pill badge-primary">{{ Question.dislikeQuestion }}</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ Question.dateQuestion|date }}</h5>
+                                    <p class="card-text">{{ Question.contenu }}</p>
+
+                                    <a href="{{ path ('Question_edit',{'id':Question.id } ) }} " class="btn musica-btn">modifier </a>
+                                    <a href="{{ path ('Question_delete',{'id':Question.id } )  }}" class="btn musica-btn">supprimer </a>
+                                    <a href="{{ path ('Question_reponses',{'id':Question.id } )  }}" class="btn musica-btn">les reponses </a>
+
+                                </div>
+                                <div class="card-footer d-flex">
+
+                                </div>
+                            </div>
+
+
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

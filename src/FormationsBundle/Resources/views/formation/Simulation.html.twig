@@ -1,0 +1,49 @@
+
+
+{% extends 'profile.html.twig' %}
+{% block name  %}
+   Liste Cours
+{% endblock%}
+{% block content %}
+<div class="col-md-12" id="postContent" style="display: flex;flex-wrap: wrap">
+<table>
+   {% for c in cour %}
+<div class="col-md-4">
+<div class="card" style="width: 20rem; margin: 20px;display:flex;flex-wrap: wrap">
+    <img class="card-img-top" width="320" height="240" src="{{ asset('uploads/assets/' ~ c.image) }}" alt="Card image cap">
+         <div class="card-body">
+            <h4 class="card-title">Titre : {{ c.titreCour}}</h4>
+            <p class="card-text">Description : {{ c.descriptionCour }}</p>
+            <ul class="list-group list-group-flush">
+                        <li class="list-group-item">ID : {{ c.courid}}</li>
+
+               <li class="list-group-item">Duree : {{ c.dureeCour }} minutes </li>
+               <li class="list-group-item">Note : {{ c.noteCour }}</li>
+            </ul>
+            <a href="{{ path('cour_edit', { 'cour_id': c.courid }) }}" class="btn btn-primary">Edit</a>
+            <a href="{{ path('cour_delete', { 'cour_id': c.courid }) }}}" class="btn btn-primary">Delete</a>
+    <a href="{{ path('commentaire_show', {'id' : c.courid }) }}" class="btn musica-btn btn-3 m-2">Afficher Cour</a>
+
+         </div>
+         </div>
+
+</div>
+      </div>
+   {% endfor %}
+
+   </table>
+
+
+ <div class="col-md-12" style="margin:20px">
+ <center>
+<a href="{{ path('cour_new') }}" class="btn btn-primary">Create New course</a>
+   <a href="{{ path('formation_index') }}" class="btn btn-primary">Liste des Formation</a>
+   <div style="margin-top: 10px">{{ facebookButton() }}</div><hr>
+           <div style="margin-top: 10px">{{ twitterButton() }}</div>
+           <div style="margin-top: 10px">{{ linkedinButton() }}</div>
+           <div style="margin-top: 10px">{{ pinterestButton() }}</div>
+   </center>
+   </div>
+
+
+{% endblock %}

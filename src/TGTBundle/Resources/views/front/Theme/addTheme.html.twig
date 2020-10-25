@@ -1,0 +1,36 @@
+{% extends 'profile.html.twig' %}
+
+{% block content %}
+                 <h1> ajouter une theme </h1>
+    <div class="align-self-center ">
+
+        {{ form_start(form, {'attr': {'class' : 'form-row'}} ) }}
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                {{ form_label(form.nomTheme, 'saisi le nom du theme', {'attr': {'class' : 'form-group col-md-6'}} ) }}
+                {{ form_widget(form.nomTheme, {'attr': {'class' : 'form-control'}}) }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_label(form.typeTheme, 'saisi le type du theme', {'attr': {'class' : 'form-group col-md-6'}} ) }}
+                {{ form_widget(form.typeTheme, {'attr': {'class' : 'form-control'}}) }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_label(form.libelleTheme, 'saisi libelle', {'attr': {'class' : 'form-group col-md-6'}} ) }}
+                {{ form_widget(form.libelleTheme, {'attr': {'class' : 'form-control'}}) }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_label(form.descriptionTheme, 'saisi la description', {'attr': {'class' : 'form-group col-md-6'}} ) }}
+                {{ form_widget(form.descriptionTheme, {'attr': {'class' : 'form-control'}}) }}
+            </div>
+
+
+
+            <div class="form-group col-md-6">
+                {{ form_widget(form.Valider, {'attr': {'class' : 'btn btn-primary btn-round'}}) }}
+
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

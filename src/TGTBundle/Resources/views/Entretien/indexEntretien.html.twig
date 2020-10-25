@@ -1,0 +1,58 @@
+{% extends 'front.html.twig' %}
+
+
+    {% block name %}Entretiens list{% endblock %}
+
+{% block content %}
+
+<div class="upcoming-shows-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                    <h2>liste des entretient</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+
+                <div class="upcoming-shows-content">
+                    {% for entretien in entretiens %}
+                        <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
+                            <div class="shows-time">
+                                <h2>{{ entretien.id }}</h2>
+                                <p>{{ entretien.idcandidat }}</p>
+                            </div>
+                            <div class="shows-time">
+                                <div class="shows-name">
+                                    <h6>date d'entretient</h6>
+                                    <p>{{ entretien.dateEnt|date('Y-m-d H:i:s') }}</p>
+                                </div>
+                            </div>
+
+                            <div class="shows-time">
+                                <div class="shows-name">
+                                    <h6>statut</h6>
+                                    <p>{{ entretien.statutEnt }}</p>
+                                </div>
+                            </div>
+                            <div class="shows-time">
+                                <div class="shows-name">
+                                    <h6>note</h6>
+                                    <p>{{ entretien.noteEnt }}</p>
+                                </div>
+                            </div>
+
+                            <div class="buy-tickets">
+                                <a href="{{ path('entretien_espace') }}" class="btn musica-btn">make a call</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock %}

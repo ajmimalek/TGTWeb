@@ -1,0 +1,205 @@
+{% extends 'profile.html.twig' %}
+{% block title %} Profile {% endblock %}
+{% block name %} Mon Profile {% endblock %}
+{% block stylesheets %}
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="{{ asset('front/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}"/>
+    <style>
+        .btn-grey{
+            background-color:#D8D8D8;
+            color:#FFF;
+        }
+        .rating-block{
+            background-color:#FAFAFA;
+            border:1px solid #EFEFEF;
+            padding:15px 15px 20px 15px;
+            border-radius:3px;
+        }
+        .bold{
+            font-weight:700;
+        }
+        .padding-bottom-7{
+            padding-bottom:7px;
+        }
+
+        .review-block{
+            background-color:#FAFAFA;
+            border:1px solid #EFEFEF;
+            padding:15px;
+            border-radius:3px;
+            margin-bottom:15px;
+        }
+        .review-block-name{
+            font-size:12px;
+            margin:10px 0;
+        }
+        .review-block-date{
+            font-size:12px;
+        }
+        .review-block-rate{
+            font-size:13px;
+            margin-bottom:15px;
+        }
+        .review-block-title{
+            font-size:15px;
+            font-weight:700;
+            margin-bottom:10px;
+        }
+        .review-block-description{
+            font-size:13px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+    <!-- ##### Ajout Publication ##### -->
+    <div class="col-12">
+        <div class="elements-title mb-30">
+            <h2>Créer une publication</h2>
+        </div>
+        <div class="musica-buttons-area mb-30" style="text-align: center">
+            <a href="{{ path('publication_new') }}" class="btn musica-btn btn-3 m-2">Publication Video</a>
+        </div>
+    </div>
+    {% for publication in publications %}
+        <div class="fitness-blog-posts" style="width: 100%;">
+            <!-- Single Post Start -->
+
+            <div class="wow fadeInUp" data-wow-delay="100ms">
+                <table style="width: 100%;">
+                    <tr>
+                        <th style="width: 40%;">
+                            <div class="blog-post-thumb mb-30" style="right: 0px;">
+                                <video height="400"
+                                       width="600" controls>
+                                    <source src="{{ asset('uploads/assets/' ~ publication.video) }}">
+                                </video>
+                            </div>
+                        </th>
+                        <th style="width: 5%">
+
+                        </th>
+                        <th>
+                            <!-- Post Meta -->
+                            <div style="left: 0px;">
+                                <div class="post-meta d-flex justify-content-between">
+                                    <div class="post-date">
+                                        <p>{% if publication.datePub %}{{ publication.datePub|localizeddate('long','short',null,'Africa/Tunis','dd-MMMM-yyyy HH:mm') }}{% endif %}</p>
+                                    </div>
+                                    <!-- Menu -->
+                                    <div class="contact-content">
+                                        <div class="contact-social-info">
+                                            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                                                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                                                    crossorigin="anonymous"></script>
+                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+                                                    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+                                                    crossorigin="anonymous"></script>
+                                            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+                                                    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+                                                    crossorigin="anonymous"></script>
+                                            <a href="{{ path('commentaires_index', { 'id_pub': publication.id }) }}"
+                                               title="Commentaires"><i class="fa fa-comment"
+                                                                       aria-hidden="true"></i></a>
+                                            <a href="{{ path('publication_edit', { 'id_pub' : publication.id }) }}"
+                                               title="Modifier cette publication"><i class="fa fa-edit"
+                                                                                     aria-hidden="true"></i></a>
+                                            <a href="{{ path('publications_delete', { 'id_pub' : publication.id }) }}"
+                                               title="Supprimer cette publication"><i class="fa fa-trash"
+                                                                                      aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- bg gradients -->
+                                <div class="bg-gradients mb-30 w-25"></div>
+                                <!-- Post Excerpt -->
+                                {{ publication.contenue }} <br>
+                                <div class="container">
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="rating-block">
+                                                <h4>Note moyenne des utilisateurs</h4>
+                                                <h2 class="bold padding-bottom-7">{{ publication.ratingPub }} <small>/ 5</small></h2>
+                                                <br> {{ publication.ratingPub|rating }}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="pull-left">
+                                                <div class="pull-left" style="width:35px; line-height:1;">
+                                                    <div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
+                                                </div>
+                                                <div class="pull-left" style="width:180px;">
+                                                    <div class="progress" style="height:9px; margin:8px 0;">
+                                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+                                                            <span class="sr-only">80% Complete (danger)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pull-right" style="margin-left:10px;">1</div>
+                                            </div>
+                                            <div class="pull-left">
+                                                <div class="pull-left" style="width:35px; line-height:1;">
+                                                    <div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
+                                                </div>
+                                                <div class="pull-left" style="width:180px;">
+                                                    <div class="progress" style="height:9px; margin:8px 0;">
+                                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+                                                            <span class="sr-only">80% Complete (danger)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pull-right" style="margin-left:10px;">1</div>
+                                            </div>
+                                            <div class="pull-left">
+                                                <div class="pull-left" style="width:35px; line-height:1;">
+                                                    <div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
+                                                </div>
+                                                <div class="pull-left" style="width:180px;">
+                                                    <div class="progress" style="height:9px; margin:8px 0;">
+                                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
+                                                            <span class="sr-only">80% Complete (danger)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pull-right" style="margin-left:10px;">0</div>
+                                            </div>
+                                            <div class="pull-left">
+                                                <div class="pull-left" style="width:35px; line-height:1;">
+                                                    <div style="height:9px; margin:5px 0;">2 <span class="glyphicon glyphicon-star"></span></div>
+                                                </div>
+                                                <div class="pull-left" style="width:180px;">
+                                                    <div class="progress" style="height:9px; margin:8px 0;">
+                                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
+                                                            <span class="sr-only">80% Complete (danger)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pull-right" style="margin-left:10px;">0</div>
+                                            </div>
+                                            <div class="pull-left">
+                                                <div class="pull-left" style="width:35px; line-height:1;">
+                                                    <div style="height:9px; margin:5px 0;">1 <span class="glyphicon glyphicon-star"></span></div>
+                                                </div>
+                                                <div class="pull-left" style="width:180px;">
+                                                    <div class="progress" style="height:9px; margin:8px 0;">
+                                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
+                                                            <span class="sr-only">80% Complete (danger)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pull-right" style="margin-left:10px;">0</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div> <!-- /container -->
+                            </div>
+                        </th>
+                </table>
+            </div>
+        </div>
+        <!-- End Post -->
+    {% endfor %}
+{% endblock %}

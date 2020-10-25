@@ -1,0 +1,33 @@
+{% extends 'back.html.twig' %}
+{% block egg %}
+
+
+    <a href="{{ path('back_AddContrat') }}"><li> affecter un contrat</li></a>
+    <br><br>
+
+    <h2>Liste Des Produits</h2>
+    <br>
+    <table class="table" style="width: 100%; ">
+
+        <tr style="background: #343A40;color: white;border: none; ">
+            <th style=" text-align: center;padding: 18px;border: none;">Id</th>
+            <th style=" text-align: center;padding: 18px;border: none;">Salaire</th>
+            <th style=" text-align: center;padding: 18px;border: none;">type de contrat</th>
+            <th style=" text-align: center;padding: 18px;border: none;">Dureecontart</th>
+            <th style=" text-align: center;padding: 18px;border: none;">modifier</th>
+            <th style=" text-align: center;padding: 18px;border-top-right-radius: 15px;border: none;">Supprimer</th>
+        </tr>
+        {% for contrat in contrat %}
+            <tr>
+                <th style=" text-align: center;">{{ contrat.id }}</th>
+                <th style=" text-align: center;">{{ contrat.salaire }}</th>
+                <th style=" text-align: center;">{{ contrat.typeContrat }}</th>
+                <th style=" text-align: center;">{{ contrat.dureeContart }}</th>
+                <th style="width: 25px;"><a href="{{ path('back_EditContrat', { 'id': contrat.id }) }}"><center><img src="{{ asset('back/img/ed.jpg') }}" /></center></a></th>
+                <th style="width: 25px;"><a href="{{ path('back_DeleteContrat',{ 'id': contrat.id }) }}"><center><img src="{{ asset('back/img/rm.jpg') }}" /></center></a></th>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation | Adminpro - Adminpro Admin Template</title>
+    <meta name="description" content="Thanks for purchasing Huge. If you need any support, please contact with us.">
+    <meta name="author" content="lucidtemplate">
+    <meta name="copyright" content="lucidtemplate">
+    <link rel="shortcut icon" type="{{ asset('back/image/png') }}" href="{{ asset('back/img/favicon.ico') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/{{ asset('back/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('back/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('back/css/tree-viewer.css') }}">
+    <link rel="stylesheet" href="{{ asset('back/css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+    <div class="left-side">
+        <div class="logo">
+            <img src="{{ asset('back/img/TGT.png') }}" alt="" width="200" height="100" />
+        </div>
+        <div class="left-content">
+            <ul role="tablist">
+                <li role="presentation" ><a href="{{ path('back') }}" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-home"></i></span>Gestion Utilisateur</a></li>
+                <li role="presentation"><a href="{{ path('back') }}" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-folder"></i></span>Gestion organisation</a></li>
+                <li role="presentation"><a href="#three" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-code"></i></span>Gestion des Entretient</a></li>
+                <li role="presentation"><a href="#six" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-slideshare"></i></span>Gestion des formation</a></li>
+                <li role="presentation"><a href="{{ path('afficheproduit') }}" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-thumbs-up"></i></span>Gestion des ventes et achats</a></li>
+                <li role="presentation"><a href="#support" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-support"></i></span>Gestion des publications</a></li>
+				<li role="presentation"><a href="#support" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-support"></i></span>Forum</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>Bags dealer &#169; 2020 </p>
+        </div>
+    </div>
+
+    <div class="right-side">
+
+        <div class="right-content">
+            <div id="one" class="content active fade in">
+                <h1> Interface <span> &nbsp;&nbsp;&nbsp;Administrateur</span></h1>
+
+                <div class="content-welcome">
+                    <p>
+                        {% block egg %}
+
+                        {% endblock %}
+                    </p>
+                </div>
+                <div class="created">
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ asset('back/js/jquery-3.1.0.min.css') }}"></script>
+<script src="{{ asset('back/js/bootstrap.min.css') }}"></script>
+<script src="{{ asset('back/js/jstree.min.css') }}"></script>
+<script src="{{ asset('back/js/jstree.active.css') }}"></script>
+<script src="{{ asset('back/js/main.css') }}"></script>
+</body>
+
+</html>

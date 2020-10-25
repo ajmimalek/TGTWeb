@@ -1,0 +1,3 @@
+publications_delete:
+    path:     /{id_pub}/delete
+    defaults: { _controller: PublicationsBundle:Publication:delete }

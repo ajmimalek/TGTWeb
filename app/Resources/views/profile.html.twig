@@ -1,0 +1,186 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>TGT - {% block title %} Acceuil {% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('front/img/core-img/favicon.png') }}">
+    {% block stylesheets %}
+        <!-- Core Stylesheet -->
+        <link rel="stylesheet" href="{{ asset('front/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+    {% endblock %}
+
+</head>
+
+<body>
+<!-- ##### Preloader ##### -->
+<div class="preloader d-flex align-items-center justify-content-center">
+    <div class="circle-preloader">
+        <img src="{{ asset('front/img/core-img/compact-disc.png') }}" alt="">
+    </div>
+</div>
+{% block header %}
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="musica-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="musicaNav">
+
+                        <!-- Nav brand -->
+                        <a href="{{ path('homepage') }}" class="nav-brand"><img
+                                    src="{{ asset('front/img/core-img/TGT.png') }}" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="{{ path('homepage') }}">Acceuil</a></li>
+                                    <li><a href="{{ path('publication_index') }}">Profile</a></li>
+                                    <li><a href="#">Menu Organisation</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{{ path('Organisations_show') }}">Organisations</a></li>
+                                            <li><a href="{{ path('Events_show') }}">Evenements</a></li>
+                                            <li><a href="{{ path('Casting_show') }}">Castings</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{{ path('formation_index') }}">Formations</a></li>
+                                    <li><a href="{{ path('afficheproduitfront') }}">Articles</a></li>
+                                    <li><a href="{{ path('Theme_show') }}">Forum</a></li>
+                                </ul>
+
+                                <!-- Social Button -->
+                                <div class="top-social-info">
+                                    <a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Déconnexion</a>
+                                </div>
+
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+{% endblock %}
+<!-- ##### Breadcumb Area Start ##### -->
+<div class="breadcumb-area bg-img bg-overlay2"
+     style="background-image: url({{ asset('front/img/bg-img/breadcumb5.jpg') }});">
+    <div class="bradcumbContent">
+        <h2>{% block name %} Change Name {% endblock %}</h2>
+    </div>
+</div>
+<!-- bg gradients -->
+<div class="bg-gradients"></div>
+<!-- ##### Breadcumb Area End ##### -->
+
+<!-- ##### Elements Area Start ##### -->
+<section class="elements-area mt-30 section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <br>
+</section>
+<!-- ##### CTA Area Start ##### -->
+<div class="musica-cta-area section-padding-100 bg-img bg-overlay2"
+     style="background-image: url({{ asset('front/img/blog-img/4.jpg') }});">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="cta-content d-flex justify-content-between align-items-center">
+                    <div class="cta-text">
+                        <h4>Contactez-nous maintenant</h4>
+                        <h2>Avez-vous une Question?</h2>
+                    </div>
+                    <div class="cta-btn">
+                        <a href="{# path('contact_path') #}" class="btn musica-btn">contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### CTA Area End ##### -->
+{% block footer %}
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer-area section-padding-100-0">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Footer Widget Area -->
+            <div class="col-12 col-md-6 col-xl-3">
+                <div class="footer-widget-area mb-100 ">
+                    <a href="#"><img src="{{ asset('front/img/core-img/TGT.png') }}" alt="Logo TGT"></a>
+                    <p class="copywrite-text">
+                        &copy;<script>document.write(new Date().getFullYear());</script>
+                        Développé avec <i class="fa fa-heart-o" aria-hidden="true"></i> par Bugs Dealers
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-xl-2">
+            </div>
+            <div class="col-12 col-sm-4 col-xl-2">
+            </div>
+            <div class="col-12 col-sm-4 col-xl-2">
+            </div>
+            <!-- Footer Widget Area -->
+            <div class="col-12 col-md-6 col-xl-3">
+                <div class="footer-widget-area mb-100">
+                    <div class="widget-title">
+                        <h4>Abonnez-Vous</h4>
+                    </div>
+                    <form action="#" method="post" class="subscribe-form">
+                        <input type="email" name="subscribe-email" id="subscribeemail">
+                        <button type="submit">S'abonner</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+{% endblock %}
+<!-- ##### Footer Area Start ##### -->
+{% block javascripts %}
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{{ asset('front/js/jquery/jquery-2.2.4.min.js') }}"></script>
+    <!-- Popper js -->
+    <script src="{{ asset('front/js/bootstrap/popper.min.js') }}"></script>
+    <!-- Bootstrap js -->
+    <script src="{{ asset('back/js/bootstrap.min.js') }}"></script>
+    <!-- All Plugins js -->
+    <script src="{{ asset('front/js/plugins/plugins.js') }}"></script>
+    <!-- Active js -->
+    <script src="{{ asset('front/js/active.js') }}"></script>
+    <!-- Rating -->
+    <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+{% endblock %}
+</body>
+
+</html>

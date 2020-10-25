@@ -1,0 +1,15 @@
+{% extends 'back.html.twig' %}
+{% block egg %}
+
+    <a href="{{ path('afficheproduit') }}"><li> Afficher Les Produits</li></a>
+    <li><a href="{{ path('afficheproduit') }}"> Afficher Les Produits</a></li>
+    <li><a href="{{ path('ajoutcategorie') }}">Ajouter  Les Catégorie</a></li>
+    <li style="border-bottom: 1px solid #ddd;"><a href="{{ path('affichecategorie') }}"> Afficher Les Catégorie</a><br><br><br></li>
+
+<div id="div_chart"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    {{ gc_draw(piechart, 'div_chart') }}
+</script>
+{% endblock %}

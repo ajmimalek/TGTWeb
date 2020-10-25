@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>TGT - {% block title %} Acceuil {% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('front/img/core-img/favicon.png') }}">
+    {% block stylesheets %}
+        <!-- Core Stylesheet -->
+        <link rel="stylesheet" href="{{ asset('front/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+    {% endblock %}
+</head>
+
+<body>
+<!-- ##### Preloader ##### -->
+<div class="preloader d-flex align-items-center justify-content-center">
+    <div class="circle-preloader">
+        <img src="{{ asset('front/img/core-img/compact-disc.png') }}" alt="">
+    </div>
+</div>
+{% block header %}
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="musica-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="musicaNav">
+
+                        <!-- Nav brand -->
+                        <a href="{{ path('homepage') }}" class="nav-brand"><img src="{{ asset('front/img/core-img/TGT.png') }}" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="{{ path('homepage') }}">Acceuil</a></li>
+                                    <li><a href="{{ path('publication_index') }}">Profile</a></li>
+                                    <li><a href="#">Menu Organisation</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{{ path('Organisations_show') }}">Organisations</a></li>
+                                            <li><a href="{{ path('Events_show') }}">Evenements</a></li>
+                                            <li><a href="{{ path('Casting_show') }}">Castings</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{{ path('formation_index') }}">Formations</a></li>
+                                    <li><a href="{{ path('afficheproduitfront') }}">Articles</a></li>
+                                    <li><a href="{{ path('Theme_show') }}">Forum</a></li>
+                                </ul>
+                                <!-- Social Button -->
+                                <div class="top-social-info">
+                                    <a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Connexion</a>
+                                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i>S'inscrire</a>
+                                </div>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+{% endblock %}
+{% block content %}
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+        <div class="hero-slides owl-carousel">
+
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide d-flex align-items-center justify-content-center">
+                <!-- Slide Img -->
+                <div class="slide-img bg-img" style="background-image: url({{asset('front/img/bg-img/bg-2.jpg')}});"></div>
+                <!-- Slide Content -->
+                <div class="hero-slides-content text-center">
+                    <h2 data-animation="fadeInUp" data-delay="100ms">Talents <span>Talents</span></h2>
+                    <p data-animation="fadeInUp" data-delay="300ms">Espace Talents</p>
+                </div>
+                <!-- Big Text -->
+                <h2 class="big-text">Talents</h2>
+            </div>
+
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide d-flex align-items-center justify-content-center">
+                <!-- Slide Img -->
+                <div class="slide-img bg-img" style="background-image: url({{asset('front/img/bg-img/bg-1.jpg')}});"></div>
+                <!-- Slide Content -->
+                <div class="hero-slides-content text-center">
+                    <h2 data-animation="fadeInUp" data-delay="100ms">Organisations <span>Organisations</span></h2>
+                    <p data-animation="fadeInUp" data-delay="300ms">Espace pour vos events et casting</p>
+                </div>
+                <!-- Big Text -->
+                <h2 class="big-text">Organisations</h2>
+            </div>
+
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide d-flex align-items-center justify-content-center">
+                <!-- Slide Img -->
+                <div class="slide-img bg-img" style="background-image: url({{asset('front/img/bg-img/bg-3.jpg')}});"></div>
+                <!-- Slide Content -->
+                <div class="hero-slides-content text-center">
+                    <h2 data-animation="fadeInUp" data-delay="100ms">Membres <span>Membres</span></h2>
+                    <p data-animation="fadeInUp" data-delay="300ms">Découvrir les talents de demain</p>
+                </div>
+                <!-- Big Text -->
+                <h2 class="big-text">Membres</h2>
+            </div>
+
+        </div>
+        <!-- bg gradients -->
+        <div class="bg-gradients"></div>
+
+        <!-- Slide Down -->
+        <div class="slide-down" id="scrollDown">
+            <h6>Glisser vers le bas</h6>
+            <div class="line"></div>
+        </div>
+    </section>
+    <!-- ##### Hero Area End ##### -->
+
+    <!-- ##### About Us Area Start ##### -->
+    <div class="about-us-area section-padding-100-0 bg-img bg-overlay" style="background-image: url({{asset('front/img/bg-img/bg-4.jpg')}});" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h2>Artist Bio</h2>
+                        <h6>Sed porta cursus enim, vitae maximus felis luctus iaculis.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- About Thumbnail -->
+                <div class="col-12 col-lg-6">
+                    <div class="about-thumbnail mb-100">
+                        <img src="{{ asset('front/img/bg-img/bg-5.jpg') }}" alt="">
+                    </div>
+                </div>
+                <!-- About Content -->
+                <div class="col-12 col-lg-6">
+                    <div class="about-content mb-100">
+                        <h4>Hello, It’s Michael Smithson</h4>
+                        <p>Nulla pretium tincidunt felis, nec sollicitudin mauris lobortis in. Aliquam eu feugiat ligula, laoreet efficitur nulla. Morbi nec neque porta, elementum massa at, vehicula nunc. Nulla facilisi. Donec id purus eu lectus imperdiet varius. Curabitur consectetur nunc sem, vitae cursus enim tempor eget. Praesent pellentesque nisi urna, sit amet suscipit ligula posuere id. Aenean id tortor vel quam ornare gravida. Phasellus luctus feugiat nunc, quis vulputate ipsum convallis quis. Integer vel nulla erat. Donec erat metus, luctus quis maximus quis, volutpat eu tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### About Us Area End ##### -->
+
+    <!-- ##### Upcoming Shows Area Start ##### -->
+    <div class="upcoming-shows-area section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h2>Upcoming shows</h2>
+                        <h6>Sed porta cursus enim, vitae maximus felis luctus iaculis.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <!-- Upcoming Shows Content -->
+                    <div class="upcoming-shows-content">
+
+                        <!-- Single Upcoming Shows -->
+                        <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
+                            <div class="shows-date">
+                                <h2>17 <span>July</span></h2>
+                            </div>
+                            <div class="shows-desc d-flex align-items-center">
+                                <div class="shows-img">
+                                    <img src="{{ asset('front/img/bg-img/s1.jpg') }}" alt="">
+                                </div>
+                                <div class="shows-name">
+                                    <h6>Electric castle Festival</h6>
+                                    <p>Cluj, Romania</p>
+                                </div>
+                            </div>
+                            <div class="shows-location">
+                                <p>At the Castle</p>
+                            </div>
+                            <div class="shows-time">
+                                <p>20:30</p>
+                            </div>
+                            <div class="buy-tickets">
+                                <a href="#" class="btn musica-btn">Buy Tikets</a>
+                            </div>
+                        </div>
+
+                        <!-- Single Upcoming Shows -->
+                        <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
+                            <div class="shows-date">
+                                <h2>23 <span>July</span></h2>
+                            </div>
+                            <div class="shows-desc d-flex align-items-center">
+                                <div class="shows-img">
+                                    <img src="{{ asset('front/img/bg-img/s2.jpg') }}" alt="">
+                                </div>
+                                <div class="shows-name">
+                                    <h6>Electric Festival</h6>
+                                    <p>Manhathan, NY, USA</p>
+                                </div>
+                            </div>
+                            <div class="shows-location">
+                                <p>Main Stadium</p>
+                            </div>
+                            <div class="shows-time">
+                                <p>21:30</p>
+                            </div>
+                            <div class="buy-tickets">
+                                <a href="#" class="btn musica-btn">Buy Tikets</a>
+                            </div>
+                        </div>
+
+                        <!-- Single Upcoming Shows -->
+                        <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
+                            <div class="shows-date">
+                                <h2>25 <span>July</span></h2>
+                            </div>
+                            <div class="shows-desc d-flex align-items-center">
+                                <div class="shows-img">
+                                    <img src="{{ asset('front/img/bg-img/s3.jpg') }}" alt="">
+                                </div>
+                                <div class="shows-name">
+                                    <h6>Sunflower festival</h6>
+                                    <p>Paris, France</p>
+                                </div>
+                            </div>
+                            <div class="shows-location">
+                                <p>Sunflower Arena</p>
+                            </div>
+                            <div class="shows-time">
+                                <p>20:30</p>
+                            </div>
+                            <div class="buy-tickets">
+                                <a href="#" class="btn musica-btn">Buy Tikets</a>
+                            </div>
+                        </div>
+
+                        <!-- Single Upcoming Shows -->
+                        <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
+                            <div class="shows-date">
+                                <h2>30 <span>July</span></h2>
+                            </div>
+                            <div class="shows-desc d-flex align-items-center">
+                                <div class="shows-img">
+                                    <img src="{{ asset('front/img/bg-img/s4.jpg') }}" alt="">
+                                </div>
+                                <div class="shows-name">
+                                    <h6>Electric castle Festival</h6>
+                                    <p>Cluj, Romania</p>
+                                </div>
+                            </div>
+                            <div class="shows-location">
+                                <p>At the Castle</p>
+                            </div>
+                            <div class="shows-time">
+                                <p>20:30</p>
+                            </div>
+                            <div class="buy-tickets">
+                                <a href="#" class="btn musica-btn">Buy Tikets</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Upcoming Shows Area End ##### -->
+
+    <!-- ##### Music Artists Area Start ##### -->
+    <div class="musica-music-artists-area d-flex flex-wrap clearfix">
+        <!-- Music Search -->
+        <div class="music-search bg-img bg-overlay2 wow fadeInUp" data-wow-delay="300ms" style="background-image: url({{asset('front/img/bg-img/bg-9.jpg')}});">
+            <!-- Content -->
+            <div class="music-search-content">
+                <h2>Talents</h2>
+                <h4>Chercher les meilleurs Talents</h4>
+            </div>
+        </div>
+
+        <!-- Artists Search -->
+        <div class="artists-search bg-img bg-overlay2 wow fadeInUp" data-wow-delay="600ms" style="background-image: url({{asset('front/img/bg-img/bg-1.jpg')}});">
+            <!-- Content -->
+            <div class="music-search-content">
+                <h2>Organisations</h2>
+                <h4>Chercher les boites de demain</h4>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Music Artists Area End ##### -->
+{% endblock %}
+{% block footer %}
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area section-padding-100-0">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="footer-widget-area mb-100">
+                        <a href="#"><img src="{{ asset('front/img/core-img/TGT.png') }}" alt=""></a>
+                        <p class="copywrite-text">
+                            &copy;<script>document.write(new Date().getFullYear());</script> Développé avec <i class="fa fa-heart-o" aria-hidden="true"></i> par Bugs Dealers
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4 col-xl-2">
+                </div>
+                <div class="col-12 col-sm-4 col-xl-2">
+                </div>
+                <div class="col-12 col-sm-4 col-xl-2">
+                </div>
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="footer-widget-area mb-100">
+                        <div class="widget-title">
+                            <h4>Abonnez-Vous</h4>
+                        </div>
+                        <form action="#" method="post" class="subscribe-form">
+                            <input type="email" name="subscribe-email" id="subscribeemail">
+                            <button type="submit">S'abonner</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+<!-- ##### Footer Area Start ##### -->
+{% block javascripts %}
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{{asset('front/js/jquery/jquery-2.2.4.min.js')}}"></script>
+    <!-- Popper js -->
+    <script src="{{asset('front/js/bootstrap/popper.min.js')}}"></script>
+    <!-- Bootstrap js -->
+    <script src="{{ asset('back/js/bootstrap.min.js') }}"></script>
+    <!-- All Plugins js -->
+    <script src="{{ asset('front/js/plugins/plugins.js') }}"></script>
+    <!-- Active js -->
+    <script src="{{ asset('front/js/active.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            openLoginModal();
+        });
+    </script>
+{% endblock %}
+</body>
+
+</html>

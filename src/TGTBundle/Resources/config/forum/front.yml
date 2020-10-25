@@ -1,0 +1,58 @@
+
+Question_show:
+  path:     /showQuestion
+  defaults: { _controller: TGTBundle:Question:read }
+Question_edit:
+  path:     /editQuestion/{id}
+  defaults: { _controller: TGTBundle:Question:edit }
+Question_add:
+  path:     /addQuestion
+  defaults: { _controller: TGTBundle:Question:new }
+Question_delete:
+  path:     /suppQuestion/{id}
+  defaults: { _controller: TGTBundle:Question:delete }
+Question_cherche:
+  path:     /chercheQuestion
+  defaults: { _controller: TGTBundle:Question:recherche }
+
+Question_calculer:
+  path:     /calculerQuestion/{id}
+  defaults: { _controller: TGTBundle:Reponse:calculer }
+
+Question_reponses:
+  path:     /reponseQuestion/{id}
+  defaults: { _controller: TGTBundle:Reponse:afficheReponse}
+
+
+
+
+Reponse_show:
+  path:     /showReponse
+  defaults: { _controller: TGTBundle:Reponse:index }
+Reponse_add:
+  path:    /addReponse
+  defaults: { _controller: TGTBundle:Reponse:new }
+Reponse_edit:
+  path:     /editReponse/{id}
+  defaults: { _controller: TGTBundle:Reponse:edit }
+Reponse_delete:
+  path:     /suppReponse/{id}
+  defaults: { _controller: TGTBundle:Reponse:delete }
+
+
+
+Theme_show:
+  path:     /
+  defaults: { _controller: TGTBundle:Theme:index }
+Theme_add:
+  path:    /addTheme
+  defaults: { _controller: TGTBundle:Theme:new }
+Theme_edit:
+  path:     /editTheme/{id}
+  defaults: { _controller: TGTBundle:Theme:edit }
+Theme_delete:
+  path:     /suppTheme/{id}
+  defaults: { _controller: TGTBundle:Theme:delete }
+Theme_question:
+  path:     /Theme_question/{id}
+  defaults: { _controller: TGTBundle:Question:afficheQuestion}

@@ -1,0 +1,46 @@
+#Organisation
+Organisations_new:
+  path: /addOrganisations
+  defaults: { _controller: TGTBundle:Organisations:new }
+
+Organisations_show:
+  path: /showOrganisations
+  defaults: { _controller: TGTBundle:Organisations:index }
+
+Organisations_edit:
+  path: /editOrganisations/{id}/
+  defaults: { _controller: TGTBundle:Organisations:edit }
+
+Organisations_delete:
+  path: /deleteOrganisations/{id}/
+  defaults: { _controller: TGTBundle:Organisations:delete }
+
+
+#######################################################################################################
+  #event
+
+#######################################################################################################
+
+event:
+  resource: "@TGTBundle/Resources/config/organisation/event/front.yml"
+  prefix:   /event
+
+
+
+
+#######################################################################################################
+  #casting
+
+#######################################################################################################
+
+casting:
+  resource: "@TGTBundle/Resources/config/organisation/casting/front.yml"
+  prefix:   /casting
+
+
+espaceE:
+  resource: "@TGTBundle/Resources/config/organisation/espaceE/front.yml"
+  prefix:   /espaceE
+
+
+

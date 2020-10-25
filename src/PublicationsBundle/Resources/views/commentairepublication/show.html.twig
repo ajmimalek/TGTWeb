@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Commentairepublication</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id_comment</th>
+                <td>{{ commentairePublication.id }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ commentairePublication.contenu }}</td>
+            </tr>
+            <tr>
+                <th>Nbinutile</th>
+                <td>{{ commentairePublication.nbinutile }}</td>
+            </tr>
+            <tr>
+                <th>Ratingcomm</th>
+                <td>{{ commentairePublication.ratingComm }}</td>
+            </tr>
+            <tr>
+                <th>Datecomm</th>
+                <td>{% if commentairePublication.dateComm %}{{ commentairePublication.dateComm|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('commentaires_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('commentaires_edit', { 'id_comment': commentairePublication.id }) }}">Edit</a>
+        </li>
+        <li>
+        </li>
+    </ul>
+{% endblock %}

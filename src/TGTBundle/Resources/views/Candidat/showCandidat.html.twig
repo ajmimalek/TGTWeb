@@ -1,0 +1,30 @@
+{% extends 'profile.html.twig' %}
+{% block name %} Details Candidat {% endblock %}
+
+{% block content %}
+
+    <div class="about-us-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <!-- About Thumbnail -->
+
+                <!-- About Content -->
+                <div class="col-12 col-lg-6">
+                    <div class="about--content mb-100">
+                        <h4>{{ candidat.nomC }}</h4>
+                        <!-- Key Notes -->
+                        <ul class="key-notes">
+                            <li><div class="check"><img src="{{ asset('front/img/core-img/check.png') }}" alt=""></div>motivation {{ candidat.motivation }} </li>
+                            <li><div class="check"><img src="{{ asset('front/img/core-img/check.png') }}" alt=""></div>cv {{ candidat.cv }} </li>
+                        </ul>
+                        <a href="{{ path('candidat_show') }}" class="btn btn-dark">retour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

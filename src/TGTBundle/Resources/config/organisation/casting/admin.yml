@@ -1,0 +1,24 @@
+
+#######################################################################################################
+
+                                    #BackCasting
+
+#######################################################################################################
+back_Casting:
+  path:     /backCasting
+  defaults: { _controller: TGTBundle:Back:indexCasting }
+
+
+back_AddCasting:
+  path:     /addCasting
+  defaults: { _controller: TGTBundle:Back:newCasting }
+
+
+back_EditCasting:
+  path:     /editCasting/{id}
+  defaults: { _controller: TGTBundle:Back:editCasting }
+
+
+back_DeleteCasting:
+  path:     /deleteCasting/{id}
+  defaults: { _controller: TGTBundle:Back:deleteCasting }

@@ -1,0 +1,118 @@
+ajoutcategorie:
+    path:     /ajoutCat
+    defaults: { _controller: EcommerceBundle:Categorie:Ajoutcategorie }
+
+affichecategorie:
+    path:     /afficheCat
+    defaults: { _controller: EcommerceBundle:Categorie:Affichecategorie }
+
+modifiercategorie:
+    path:     /modifierCat/{id}
+    defaults: { _controller: EcommerceBundle:Categorie:Modifcategorie }
+
+
+supprimercategorie:
+    path:     /suppCat/{id}
+    defaults: { _controller: EcommerceBundle:Categorie:Suppcategorie }
+
+ajoutproduit:
+    path:     /ajoutProduit
+    defaults: { _controller: EcommerceBundle:Produit:Ajoutproduit }
+
+afficheproduit:
+    path:     /afficheProduit
+    defaults: { _controller: EcommerceBundle:Produit:Afficheproduit }
+
+supprimerproduit:
+    path:     /suppProduit/{id}
+    defaults: { _controller: EcommerceBundle:Produit:Suppproduit }
+
+modifierproduit:
+    path:     /modifierProduit/{id}
+    defaults: { _controller: EcommerceBundle:Produit:Modifproduit }
+
+back:
+    path:     /back
+    defaults: { _controller: EcommerceBundle:Produit:back }
+
+front:
+    path:     /front
+    defaults: { _controller: EcommerceBundle:Produit:front }
+
+afficheproduitfront:
+    path:     /afficheProduitFront
+    defaults: { _controller: EcommerceBundle:Produit:Afficheproduitfront }
+
+detailproduitfront:
+    path:     /detailProd/{id}
+    defaults: { _controller: EcommerceBundle:Produit:detailProd }
+
+_graphePie:
+    path:     /pie
+    defaults: { _controller: EcommerceBundle:Default:stat }
+
+wishlist:
+    path:     /wishlist/{id}
+    defaults: { _controller: EcommerceBundle:wishlist:wishlist }
+
+affichewishlist:
+    path:     /affichewishlist
+    defaults: { _controller: EcommerceBundle:wishlist:affichewishlist }
+
+supprimerwishlist:
+    path:     /supprimerwishlist/{id}
+    defaults: { _controller: EcommerceBundle:wishlist:supprimerwishlist }
+
+AfficheCategorieFront:
+    path:     /AfficheCategorieFront
+    defaults: { _controller: EcommerceBundle:Categorie:AfficheCategorieFront }
+
+produitparcategorie:
+    path:     /produitparcategorie/{id}
+    defaults: { _controller: EcommerceBundle:Produit:produitparcat }
+
+
+AddPanier:
+    path:    /panier/add/{id}
+    defaults: { _controller: EcommerceBundle:panier:addPanier}
+
+indexPanier:
+    path:   /panier
+    defaults: { _controller: EcommerceBundle:panier:panier}
+
+removeFromPanier:
+    path:   /panier/remove/{id}
+    defaults: { _controller: EcommerceBundle:panier:remove}
+
+checkout_commande:
+    path:   /checkout
+    defaults: { _controller: EcommerceBundle:Commande:create}
+
+
+payment:
+    path:   /panier/payment
+    defaults : { _controlleur: EcommerceBundle:panier:payment }
+
+
+commentaire_trie:
+    path: /commentaire/trie/{val}
+    defaults: {_controller: EcommerceBundle:Commentaire:Trier}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+commande:
+    path:   /commande
+    defaults: { _controller: EcommerceBundle:Commande:commande}
+
+

@@ -1,0 +1,30 @@
+{% extends 'profile.html.twig' %}
+{% block name  %}
+    Affiche cours
+{% endblock%}
+{% block content %}
+
+
+        <div class="card" style="width: 30rem;">
+            <img class="card-img-top" width="320" height="240" src="{{ asset('uploads/assets/' ~ cour.image) }}" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title">{{ cour.titreCour}}</h4>
+                <p class="card-text">{{ cour.descriptionCour }}</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ cour.dureeCour }}
+                    <li class="list-group-item">{{ cour.noteCour }}</li>
+                    <li class="list-group-item">{{ cour.textCour }}</li>
+                </ul>
+                <a href="{{ path('cour_edit', { 'cour_id': cour.courid }) }}" class="btn btn-primary">Edit</a>
+                <a href="{{ path('cour_delete', { 'cour_id': cour.courid }) }}}" class="btn btn-primary">Infos</a>
+                <a href="{{ path('cour_show', { 'cour_id': cour.courid }) }}" class="btn btn-primary">Consulter</a>
+
+            </div>
+        </div>
+
+
+
+    <a href="{{ path('cour_new') }}" class="btn btn-primary">Create New course</a>
+    <a href="{{ path('formation_index') }}" class="btn btn-primary">Liste des Formation</a>
+    <a href="{{ path('cour_index') }}" class="btn btn-primary">Liste des cours</a>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'profile.html.twig' %}
+
+{% block content %}
+    <h1>Contrats list</h1>
+
+    <table class="table-active">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Salaire</th>
+            <th>Typecontrat</th>
+            <th>Dureecontart</th>
+            <th>modifier</th>
+            <th>suprimer</th>
+            <th>voir contrat</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for contrat in contrats %}
+            <tr>
+                <td><a href="{{ path('contrat_show', { 'id': contrat.id }) }}">{{ contrat.id }}</a></td>
+                <td>{{ contrat.salaire }}</td>
+                <td>{{ contrat.typeContrat }}</td>
+                <td>{{ contrat.dureeContart }}</td>
+                <td><button  style="    background-color: #ff3636;" class="btn btn-primary btn-round btn-block btn-lg"><a href="{{ path('contrat_delete', { 'id':contrat.id }) }}"> DELETE</a></button> </td>
+                <td><button class="btn btn-primary btn-round btn-block btn-lg"> <a href="{{ path('contrat_edit', { 'id': contrat.id }) }}">edit</a></button> </td>
+                <td> <a href="{{ path('PDF',{ 'id': contrat.id }) }}">afficher le contrat</a></td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

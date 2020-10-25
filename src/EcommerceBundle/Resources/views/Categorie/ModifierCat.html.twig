@@ -1,0 +1,24 @@
+{% extends 'back.html.twig' %}
+{% block egg %}
+
+    <a href="{{ path('ajoutproduit') }}"><li> Ajouter Des Produits</li></a>
+    <a href="{{ path('afficheproduit') }}"><li> Afficher Les Produits</li></a>
+    <li><a href="{{ path('ajoutcategorie') }}">Ajouter  Les Catégorie</a></li>
+    <li style="border-bottom: 1px solid #ddd;"><a href="{{ path('affichecategorie') }}"> Afficher Les Catégorie</a><br><br><br></li>
+    <br><br>
+    {{ form_start(form) }}
+    <table>
+
+        <tr style="height: 50px;">
+            <th style="width: 120px;">Nom</th>
+            <th>{{ form_widget(form.nomcategorie, {'attr': {'class':'form-control'}}, {'attr': {'required':'required'}}) }}</th>
+        </tr>
+
+        <tr style="height: 50px;">
+            <th style="width: 120px;"></th>
+            <th><input type ="submit" value="Modifier" class="btn btn-success"></th>
+        </tr>
+    </table>
+
+    {{ form_end(form) }}
+{% endblock %}

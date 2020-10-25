@@ -1,0 +1,33 @@
+
+    {% extends 'back.html.twig' %}
+    {% block egg %}
+
+        <a href="{{ path('back_AddEntretient') }}"><li> affecter un entretient</li></a>
+        <br><br>
+
+        <h2>Liste Des Produits</h2>
+        <br>
+        <table class="table" style="width: 100%; ">
+
+            <tr style="background: #343A40;color: white;border: none; ">
+                <th style=" text-align: center;padding: 18px;border: none;">Id</th>
+                <th style=" text-align: center;padding: 18px;border: none;">nom condidat</th>
+                <th style=" text-align: center;padding: 18px;border: none;">Dateent</th>
+                <th style=" text-align: center;padding: 18px;border: none;">Statutent</th>
+                <th style=" text-align: center;padding: 18px;border: none;">Noteent</th>
+                <th style=" text-align: center;padding: 18px;border: none;">modifier</th>
+                <th style=" text-align: center;padding: 18px;border-top-right-radius: 15px;border: none;">Supprimer</th>
+            </tr>
+            {% for entretien in entretient %}
+                <tr>
+                    <th style=" text-align: center;"><a href="{{ path('entretien_show', { 'id': entretien.id }) }}">{{ entretien.id }}}</th>
+                    <th style=" text-align: center;">{{ entretien.idcandidat }}</th>
+                    <th style=" text-align: center;">{% if entretien.dateEnt %}{{ entretien.dateEnt|date('Y-m-d H:i:s') }}{% endif %}</th>
+                    <th style=" text-align: center;">{{ entretien.statutEnt }}</th>
+                    <th style=" text-align: center;">{{ entretien.noteEnt }}</th>
+                    <th style="width: 25px;"><a href="{{ path('entretien_edit', { 'id': entretien.id }) }}"><center><img src="{{ asset('back/img/ed.jpg') }}" /></center></a></th>
+            <th style="width: 25px;"><a href="{{ path('back_DeleteEntretient',{ 'id': entretien.id }) }}"><center><img src="{{ asset('back/img/rm.jpg') }}" /></center></a></th>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endblock %}

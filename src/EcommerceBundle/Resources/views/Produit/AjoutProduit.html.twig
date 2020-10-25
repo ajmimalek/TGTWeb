@@ -1,0 +1,44 @@
+{% extends 'back.html.twig' %}
+{% block egg %}
+
+    <a href="{{ path('afficheproduit') }}"><li> Afficher Les Produits</li></a>
+    <li><a href="{{ path('ajoutcategorie') }}">Ajouter  Les Catégorie</a></li>
+    <li style="border-bottom: 1px solid #ddd;"><a href="{{ path('affichecategorie') }}"> Afficher Les Catégorie</a><br><br><br></li>
+
+
+    {{ form_start(form) }}
+    <table>
+
+    <tr style="height: 50px;">
+        <th style="width: 120px;">Nom</th>
+        <th>{{ form_widget(form.nom, {'attr': {'class':'form-control'}}, {'attr': {'required':'required'}}) }}</th>
+    </tr>
+
+    <tr style="height: 30px;">
+        <th style="width: 120px;">Prix</th>
+        <th>{{ form_widget(form.prix, {'attr': {'class':'form-control'}}, {'attr': {'required':'required'}}) }}</th>
+    </tr>
+    <tr style="height: 50px;">
+        <th style="width: 120px;">Qunatité</th>
+        <th>{{ form_widget(form.quantite, {'attr': {'class':'form-control'}}, {'attr': {'required':'required'}}) }}</th>
+    </tr>
+        <tr style="height: 50px;">
+            <th style="width: 120px;">Description</th>
+            <th>{{ form_widget(form.description, {'attr': {'class':'form-control'}}, {'attr': {'required':'required'}}) }}</th>
+        </tr>
+    <tr style="height: 50px;">
+        <th style="width: 120px;">Catégorie</th>
+        <th>{{ form_widget(form.categorie, {'attr': {'class':'form-control'}}) }}</th>
+    </tr>
+        <tr style="height: 50px;">
+            <th style="width: 120px;">Image</th>
+            <th>{{ form_widget(form.image, {'attr': {'class':'form-control'}}, {'attr': {'required':'required'}}) }}</th>
+        </tr>
+        <tr style="height: 50px;">
+            <th style="width: 120px;"></th>
+            <th><input type ="submit" value="Ajouter" class="btn btn-success"></th>
+        </tr>
+    </table>
+
+    {{ form_end(form) }}
+{% endblock %}

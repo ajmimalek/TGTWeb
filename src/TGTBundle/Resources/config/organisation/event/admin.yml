@@ -1,0 +1,18 @@
+back_Events:
+  path:     /backEvents
+  defaults: { _controller: TGTBundle:Back:indexEvents }
+
+
+back_AddEvents:
+  path:     /addEvents
+  defaults: { _controller: TGTBundle:Back:newEvents }
+
+
+back_EditEvents:
+  path:     /editEvents/{id}
+  defaults: { _controller: TGTBundle:Back:editEvents }
+
+
+back_DeleteEvents:
+  path:     /deleteEvents/{id}
+  defaults: { _controller: TGTBundle:Back:deleteEvents }

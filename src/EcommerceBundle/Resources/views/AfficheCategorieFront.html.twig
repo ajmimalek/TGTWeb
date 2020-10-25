@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css') }}">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>TGT - {% block title %} Acceuil {% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('front/img/core-img/favicon.png') }}">
+    {% block stylesheets %}
+        <!-- Core Stylesheet -->
+        <link rel="stylesheet" href="{{ asset('front/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/css/login-register.css') }}">
+    {% endblock %}
+
+</head>
+<style>
+    .checked {
+        color: orange;
+    }
+</style>
+
+<body>
+<!-- ##### Preloader ##### -->
+<div class="preloader d-flex align-items-center justify-content-center">
+    <div class="circle-preloader">
+        <img src="{{ asset('front/img/core-img/compact-disc.png') }}" alt="">
+    </div>
+</div>
+{% block header %}
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="musica-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="musicaNav">
+
+                        <!-- Nav brand -->
+                        <a href="{{ path('homepage') }}" class="nav-brand"><img src="{{ asset('front/img/core-img/TGT.png') }}" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="{{ path('homepage') }}">Acceuil</a></li>
+                                    <li><a href="#">Publications</a></li>
+                                    <li><a href="{{ path('afficheproduitfront') }}">Instruments</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{{ path('afficheproduitfront') }}">Instruments</a></li>
+                                            <li><a href="{{ path('AfficheCategorieFront') }}">Les Catégories</a></li>
+                                            <li><a href="{{ path('affichewishlist') }}">Wishlist</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Menu Organisation</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">Organisations</a></li>
+                                            <li><a href="#">Evenements</a></li>
+                                            <li><a href="#">Castings</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="#">Passer Entretien</a> </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Formations</a></li>
+                                    <li><a href="#">Forum</a></li>
+                                </ul>
+
+                                <!-- Social Button -->
+                                <div class="top-social-info">
+                                    <a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();"><i class="fa fa-sign-in" aria-hidden="true"></i>Connexion</a>
+                                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i>S'inscrire</a>
+                                </div>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+{% endblock %}
+{% block content %}
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+        <div class="hero-slides owl-carousel">
+
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide d-flex align-items-center justify-content-center">
+                <!-- Slide Img -->
+                <div class="slide-img bg-img" style="background-image: url({{asset('front/img/bg-img/bg-2.jpg')}});"></div>
+                <!-- Slide Content -->
+                <div class="hero-slides-content text-center">
+                    <h2 data-animation="fadeInUp" data-delay="100ms">Talents <span>Talents</span></h2>
+                    <p data-animation="fadeInUp" data-delay="300ms">Espace Talents</p>
+                </div>
+                <!-- Big Text -->
+                <h2 class="big-text">Talents</h2>
+            </div>
+
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide d-flex align-items-center justify-content-center">
+                <!-- Slide Img -->
+                <div class="slide-img bg-img" style="background-image: url({{asset('front/img/bg-img/bg-1.jpg')}});"></div>
+                <!-- Slide Content -->
+                <div class="hero-slides-content text-center">
+                    <h2 data-animation="fadeInUp" data-delay="100ms">Organisations <span>Organisations</span></h2>
+                    <p data-animation="fadeInUp" data-delay="300ms">Espace pour vos events et casting</p>
+                </div>
+                <!-- Big Text -->
+                <h2 class="big-text">Organisations</h2>
+            </div>
+
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide d-flex align-items-center justify-content-center">
+                <!-- Slide Img -->
+                <div class="slide-img bg-img" style="background-image: url({{asset('front/img/bg-img/bg-3.jpg')}});"></div>
+                <!-- Slide Content -->
+                <div class="hero-slides-content text-center">
+                    <h2 data-animation="fadeInUp" data-delay="100ms">Membres <span>Membres</span></h2>
+                    <p data-animation="fadeInUp" data-delay="300ms">Découvrir les talents de demain</p>
+                </div>
+                <!-- Big Text -->
+                <h2 class="big-text">Membres</h2>
+            </div>
+
+        </div>
+        <!-- bg gradients -->
+        <div class="bg-gradients"></div>
+
+        <!-- Slide Down -->
+        <div class="slide-down" id="scrollDown">
+            <h6>Glisser vers le bas</h6>
+            <div class="line"></div>
+        </div>
+    </section>
+    <!-- ##### Hero Area End ##### -->
+
+
+    <br><br><br>
+                        {% for c in categorie %}
+                            <center><a href="{{ path('produitparcategorie',{'id':c.id}) }}"><button  style="background-color: #BA177B;width: 60%;" type="button" class="btn btn-primary btn-lg btn-block">{{ c.nomcategorie }}</button></a><br></center>
+                        {% endfor %}
+
+
+
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <!-- ##### Music Artists Area End ##### -->
+{% endblock %}
+{% block footer %}
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area section-padding-100-0">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="footer-widget-area mb-100">
+                        <a href="#"><img src="{{ asset('front/img/core-img/TGT.png') }}" alt=""></a>
+                        <p class="copywrite-text">
+                            &copy;<script>document.write(new Date().getFullYear());</script> Développé avec <i class="fa fa-heart-o" aria-hidden="true"></i> par Bugs Dealers
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4 col-xl-2">
+                </div>
+                <div class="col-12 col-sm-4 col-xl-2">
+                </div>
+                <div class="col-12 col-sm-4 col-xl-2">
+                </div>
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="footer-widget-area mb-100">
+                        <div class="widget-title">
+                            <h4>Abonnez-Vous</h4>
+                        </div>
+                        <form action="#" method="post" class="subscribe-form">
+                            <input type="email" name="subscribe-email" id="subscribeemail">
+                            <button type="submit">S'abonner</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+<!-- ##### Footer Area Start ##### -->
+{% block javascripts %}
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{{asset('front/js/jquery/jquery-2.2.4.min.js')}}"></script>
+    <!-- Popper js -->
+    <script src="{{asset('front/js/bootstrap/popper.min.js')}}"></script>
+    <!-- Bootstrap js -->
+    <script src="{{ asset('back/js/bootstrap.min.js') }}"></script>
+    <!-- All Plugins js -->
+    <script src="{{ asset('front/js/plugins/plugins.js') }}"></script>
+    <!-- Active js -->
+    <script src="{{ asset('front/js/active.js') }}"></script>
+    <script src="{{ asset('front/js/login-register.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            openLoginModal();
+        });
+    </script>
+{% endblock %}
+</body>
+
+</html>

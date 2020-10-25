@@ -1,0 +1,25 @@
+<div class="music-player-slides owl-carousel js-filter-content">
+
+    {% for casting in castings %}
+        <div class="single-music-player" style="height: 450px;">
+            <div style="width: 480px;height: 500px">
+                <img src="{{ asset('uploads/images/' ~ casting.ImageCasting) }}" alt="Card image cap">
+            </div>
+            <div class="music-info d-flex justify-content-between">
+                <div class="music-text">
+                    <h4 class="card-title">{{ casting.titreCasting }}</h4>
+
+                    <ul class="list-group list-group-flush">
+
+                        <li class="card-text">{{ casting.adresseCasting }}</li>
+                        <li class="card-text">{{ casting.themeCasting }}</li>
+                    </ul>
+                    <a href="{{ path('Casting_details', { 'id': casting.id }) }}" class="btn musica-btn m-2">voir</a>
+                </div>
+
+            </div>
+        </div>
+    {% endfor %}
+
+
+</div>

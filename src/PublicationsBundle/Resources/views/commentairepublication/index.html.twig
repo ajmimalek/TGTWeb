@@ -1,0 +1,75 @@
+{% extends 'profile.html.twig' %}
+{% block title %} Commentaires {% endblock %}
+{% block name %} Mes Commentaires {% endblock %}
+{% block content %}
+    <!-- ##### Ajout Publication ##### -->
+    <div class="col-12">
+        <div class="elements-title mb-30">
+            <h2>Votre Commentaire</h2>
+            Donnez votre avis aux utilisateurs
+        </div>
+        <div class="musica-buttons-area mb-30">
+            <div class="contact-content">
+                <div class="contact-form-area">
+                    <table>
+                        {{ form_start(form) }}
+                        <tr>
+                            <td>{{ form_widget(form.ratingComm) }}</td>
+                            <td width="70%">{{ form_widget(form.contenu) }}</td>
+                            <td>{{ form_widget(form.Valider) }}</td>
+                        </tr>
+                        {{ form_end(form) }}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 text-right">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+                integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+                integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+                crossorigin="anonymous"></script>
+        <div class="btn-group" style="height: 51px;margin: 20px">
+            <button class="max btn musica-btn btn-2 m-2 btn-lg dropdown-toggle" type="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trier Par
+            </button>
+            <div class="dropdown-menu" x-placement="bottom-start"
+                 style="position: absolute; transform: translate3d(0px, 47px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="{{ path('commentaires_trie', { 'val': 'Date' , 'id_pub' : publication.id }) }}"> Plus récent au moins
+                    récent</a>
+                <a class="dropdown-item" href="{{ path('commentaires_trie', { 'val': 'Rating' , 'id_pub' : publication.id }) }}">Rating</a>
+                <a class="dropdown-item" href="{{ path('commentaires_index', {'id_pub' : publication.id }) }}">Restaurer</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="table">
+        <ul style="width: 100%">
+            {% for c in commentairePublications %}
+                <li style="width: 40%; float:left;">
+                    {{ c.contenu }}
+                </li>
+                <li style="width: 40%; float:left;">{{ c.ratingComm|rating(5, "fa-xs") }}</li>
+                <li style="width: 20%; float:left;">
+                    <!-- Menu -->
+                    <div class="contact-content">
+                        <div class="contact-social-info">
+                            <a href="{{ path('commentaires_edit', { 'id_pub' : publication.id , 'id_comment' : c.id }) }}"
+                               title="Modifier ce commentaire"><i class="fa fa-edit"
+                                                                  aria-hidden="true"></i></a>
+                            <a href="{{ path('commentaires_delete', { 'id_pub' : publication.id , 'id_comment' : c.id }) }}" title="Supprimer ce commentaire"><i class="fa fa-trash"
+                                                                            aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+{% endblock %}

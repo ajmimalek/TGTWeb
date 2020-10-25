@@ -1,0 +1,70 @@
+{% extends 'front.html.twig' %}
+
+{% block content %}
+    <div class="upcoming-shows-area section-padding-100">
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="section-heading">
+                <h2>liste des candidat</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+
+            <div class="upcoming-shows-content">
+                {% for candidat in candidats %}
+                <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
+                    <div class="shows-time">
+                        <h2>{{ candidat.id }}</h2>
+                        <p></p>
+
+                    </div>
+                    <div class="shows-time">
+                        <div class="shows-name">
+                            <h6>nom du casting</h6>
+                            <p>{{ candidat.idcasting }}</p>
+                        </div>
+                    </div>
+                    <div class="shows-time">
+                        <div class="shows-name">
+                            <h6>nom</h6>
+                            <p>{{ candidat.nomC }}</p>
+                        </div>
+                    </div>
+
+                    <div class="shows-time">
+                        <div class="shows-name">
+                        <h6>cin</h6>
+                        <p>{{ candidat.cinCondidat }}</p>
+                        </div>
+                    </div>
+
+                    <div class="shows-time">
+                        <div class="shows-name">
+                        <h6>mail</h6>
+                        <p>{{ candidat.mailaddress }}</p>
+                        </div>
+                    </div>
+                    <div class="shows-time">
+                        <div class="shows-name">
+                            <h6>tel</h6>
+                        <p>{{ candidat.tel }}</p>
+                        </div>
+                    </div>
+                    <div class="buy-tickets">
+                        <a href="{{ path('candidat_detail', { 'id': candidat.id }) }}" class="btn musica-btn">voir</a>
+                    </div>
+                    <div class="buy-tickets">
+                        <a href="{{ path('entretien_new') }}" class="btn musica-btn">affect une date </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    </section>
+{% endblock %}

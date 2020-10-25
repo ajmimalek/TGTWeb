@@ -1,0 +1,17 @@
+{% extends 'profile.html.twig' %}
+{% block name  %}
+    Ajout Cour
+{% endblock%}
+{% block content %}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_errors(form) }}
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('cour_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+
+#Casting
+Casting_add:
+  path: /addCasting
+  defaults: { _controller: TGTBundle:Casting:new }
+
+Casting_show:
+  path: /showCasting
+  defaults: { _controller: TGTBundle:Casting:index }
+
+Casting_edit:
+  path: /editCasting/{id}/
+  defaults: { _controller: TGTBundle:Casting:edit }
+
+Casting_delete:
+  path: /deleteCasting/{id}/
+  defaults: { _controller: TGTBundle:Casting:delete }
+
+
+Casting_details:
+  path: /detailsCasting/{id}/
+  defaults: { _controller: TGTBundle:Casting:show }
+
+

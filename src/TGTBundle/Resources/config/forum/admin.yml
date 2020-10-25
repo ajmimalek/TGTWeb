@@ -1,0 +1,55 @@
+
+#BackQuestion
+
+back_Question:
+  path:     /backQuestion
+  defaults: { _controller: TGTBundle:Back:indexQuestion }
+
+back_AddQuestion:
+  path:     /addQuestion
+  defaults: { _controller: TGTBundle:Back:addQuestion }
+
+back_EditQuestion:
+  path:     /editQuestion/{id}
+  defaults: { _controller: TGTBundle:Back:editQuestion }
+
+back_DeleteQuestion:
+  path:     /deleteQuestion/{id}
+  defaults: { _controller: TGTBundle:Back:deleteQuestion }
+
+#BackTheme
+back_Theme:
+  path:     /backTheme
+  defaults: { _controller: TGTBundle:Back:indexTheme }
+
+back_AddTheme:
+  path:     /addTheme
+  defaults: { _controller: TGTBundle:Back:addTheme}
+
+back_EditTheme:
+  path:     /editTheme/{id}
+  defaults: { _controller: TGTBundle:Back:editTheme}
+
+back_DeleteTheme:
+  path:     /deleteTheme/{id}
+  defaults: { _controller: TGTBundle:Back:deleteTheme }
+
+  #BackReponse
+
+back_Reponse:
+  path:     /backReponse
+  defaults: { _controller: TGTBundle:Back:indexReponse }
+
+back_AddReponse:
+  path:     /addReponse
+  defaults: { _controller: TGTBundle:Back:addReponse}
+
+back_EditReponse:
+  path:     /editReponse/{id}
+  defaults: { _controller: TGTBundle:Back:editReponse}
+
+back_DeleteReponse:
+  path:     /deleteReponse/{id}
+  defaults: { _controller: TGTBundle:Back:deleteReponse }
+
+#RootFront

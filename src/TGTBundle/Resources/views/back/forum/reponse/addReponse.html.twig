@@ -1,0 +1,16 @@
+{% extends 'back.html.twig' %}
+
+{% block egg %}
+    <h1>Reponse creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('back_Reponse') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

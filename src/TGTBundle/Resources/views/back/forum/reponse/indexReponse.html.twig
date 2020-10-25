@@ -1,0 +1,40 @@
+{% extends 'back.html.twig' %}
+
+{% block egg %}
+    <h1>Reponses list</h1>
+    <ul>
+        <li>
+            <a href="{{path('back_AddReponse') }}">ajouter reponse </a>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <a href="{{path('back_Question') }}">liste des  questions </a>
+        </li>
+    </ul>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Contenureponse</th>
+                <th>Date</th>
+                <th>Likereponce</th>
+                <th>Dislikereponse</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reponse in reponses %}
+            <tr>
+                <td><a href="{{ path('reponse_show', { 'id': reponse.id }) }}">{{ reponse.id }}</a></td>
+                <td>{{ reponse.contenuReponse }}</td>
+                <td>{% if reponse.date %}{{ reponse.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ reponse.likeReponce }}</td>
+                <td>{{ reponse.dislikeReponse }}</td>
+                <td><a href="{{ path('back_EditReponse',{'id':reponse.id}) }}"> <img src="{{ asset ('back/img/ed.jpg') }}" width="30" height="30"> </a>
+                    <a href="{{ path('back_DeleteReponse',{'id':reponse.id}) }}"><img src="{{ asset ('back/img/rm.jpg') }}"
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

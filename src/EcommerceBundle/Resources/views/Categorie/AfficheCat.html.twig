@@ -1,0 +1,49 @@
+{% extends 'back.html.twig' %}
+{% block egg %}
+
+<a href="{{ path('ajoutcategorie') }}"><li>Ajouter  Les Catégories</li></a>
+<li><a href="{{ path('ajoutproduit') }}">Ajouter  Les Produits</a></li>
+<li style="border-bottom: 1px solid #ddd;"><a href="{{ path('afficheproduit') }}"> Afficher Les Produits</a><br><br><br></li>
+    <br><br>
+
+<center>
+<h2>Liste Des Catégories</h2>
+    <br>
+    <table class="table" style="width: 70%;">
+
+    <tr style="background: #343A40;color: white;border: none; ">
+        <th style=" text-align: center;padding: 18px;border-top-left-radius: 15px;border: none;">Nom de categorie</th>
+        <th style=" text-align: center;padding: 18px;border: none;">Modifier</th>
+        <th style=" text-align: center;padding: 18px;border-top-right-radius: 15px;border: none;">Supprimer</th>
+    </tr>
+{% for c in categorie %}
+    <tr>
+        <th style=" text-align: center;">{{ c.nomcategorie }}</th>
+        <th style="width: 25px;"><a href="{{ path('modifiercategorie',{'id':c.id}) }}"><center><img src="{{ asset('back/img/ed.jpg') }}" /></center></a></th>
+        <th style="width: 25px;"><a href="#" data-toggle="modal" data-target="#exampleModal"><center><img src="{{ asset('back/img/rm.jpg') }}" /></center></a></th>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Supprimer Catégorie</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Voulez-vous vraiment supprimer cette Catégorie  ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <a href="{{ path('supprimercategorie',{'id':c.id}) }}"> <button type="button" class="btn btn-danger">Supprimer</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </tr>
+    {% endfor %}
+</table>
+</center>
+{% endblock %}

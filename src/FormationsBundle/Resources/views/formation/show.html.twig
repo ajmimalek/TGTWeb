@@ -1,0 +1,26 @@
+{% extends 'profile.html.twig' %}
+{% block name  %}
+    Affichage Formation
+{% endblock%}
+{% block content %}
+<center>
+    <table align="center">
+        <div class="card" style="width: 30rem;">
+            <img class="card-img-top" width="320" height="240" src="{{ asset('uploads/assets/' ~ formation.image) }}" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title">Titre : {{ formation.titreFormation }}</h4>
+                <p class="card-text">Description : {{ formation.descriptionFormation }}</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Duree : {{ formation.dureeFormation }}
+                    <li class="list-group-item">ID : {{ formation.formationid }}</li>
+                </ul>
+                <a href="{{ path('formation_edit', { 'formation_id': formation.formationid }) }}" class="btn btn-primary">Edit</a>
+                <a href="{{ path('formation_delete', { 'formation_id': formation.formationid }) }}" class="btn btn-primary">Delete</a>
+                <a href="{{ path('formation_index', { 'formation_id': formation.formationid }) }}" class="btn btn-primary">Back to List</a>
+
+            </div>
+            {{ socialButtons() }}
+        </div>
+</center>
+
+{% endblock %}

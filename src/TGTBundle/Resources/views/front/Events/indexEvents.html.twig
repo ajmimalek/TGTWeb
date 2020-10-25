@@ -1,0 +1,46 @@
+{% extends 'profile.html.twig' %}
+{% block title %} Evenements {% endblock %}
+{% block name %} Mes évenements {% endblock %}
+{% block content %}
+    <!-- ##### Ajout Publication ##### -->
+    <div class="col-12">
+        <div class="elements-title mb-30">
+            <h2>Ajouter un évenement</h2>
+        </div>
+        <div class="musica-buttons-area mb-30" style="text-align: center">
+            <a href="{{ path('Events_add') }}" class="btn musica-btn btn-3 m-2">Ajouter votre évenement</a>
+        </div>
+    </div>
+    <div class="music-player-area section-padding-100">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="music-player-slides owl-carousel">
+
+                        {% for event in events %}
+                            <div class="single-music-player" style="height: 450px;">
+                                <div style="width: 480px;height: 500px">
+                                    <img src="{{ asset('uploads/images/' ~ event.ImageEvents) }}" alt="Card image cap">
+                                </div>
+                                <div class="music-info d-flex justify-content-between">
+                                    <div class="music-text">
+                                        <h4 class="card-title">{{ event.titreEvents }}</h4>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="card-text">{{ event.adresseEvents }}</li>
+                                            <li class="card-text">{{ event.themeEvents }}</li>
+                                            <li class="card-text">{{ event.dateEvents|date }}</li>
+                                        </ul>
+                                        <a href="{{ path('Events_details', { 'id': event.id }) }}" class="btn musica-btn m-2">voir</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

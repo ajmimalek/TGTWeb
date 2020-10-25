@@ -1,0 +1,62 @@
+#Candidat
+candidat_new:
+  path:     /newCandidat
+  defaults: { _controller: TGTBundle:Candidat:new }
+
+candidat_show:
+  path:     /showCandidat
+  defaults: { _controller: TGTBundle:Candidat:index }
+
+candidat_edit:
+  path:     /editCandidat/{id}/
+  defaults: { _controller: TGTBundle:Candidat:edit }
+
+candidat_delete:
+  path:     /deleteCandidat/{id}/
+  defaults: { _controller: TGTBundle:Candidat:delete }
+
+candidat_detail:
+  path:     /detailCandidat/{id}/
+  defaults: { _controller: TGTBundle:Candidat:show }
+
+#Contrat
+contrat_new:
+  path:     /newContrat
+  defaults: { _controller: TGTBundle:Contrat:new }
+
+contrat_show:
+  path:     /showContrat
+  defaults: { _controller: TGTBundle:Contrat:index }
+
+contrat_edit:
+  path:     /editContrat/{id}/
+  defaults: { _controller: TGTBundle:Contrat:edit }
+
+contrat_delete:
+  path:     /deleteContrat/{id}/
+  defaults: { _controller: TGTBundle:Contrat:delete }
+#Entretien
+entretien_new:
+  path:     /newEntretien
+  defaults: { _controller: TGTBundle:Entretien:new }
+
+entretien_show:
+  path:     /showEntretien
+  defaults: { _controller: TGTBundle:Entretien:index }
+
+entretien_edit:
+  path:     /editEntretien/{id}/
+  defaults: { _controller: TGTBundle:Entretien:edit }
+
+entretien_delete:
+  path:     /deleteEntretien/{id}/
+  defaults: { _controller: TGTBundle:Entretien:delete }
+
+
+entretien_espace:
+  path:     /espaceEntretien
+  defaults: { _controller: TGTBundle:Entretien:espaceentretien}
+
+refuser_Entretien:
+  path:     /refuser/{id}/
+  defaults: { _controller: TGTBundle:Entretien:refuser }

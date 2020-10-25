@@ -1,0 +1,44 @@
+{% extends 'back.html.twig' %}
+
+{% block egg %}
+    <h1>Questions list</h1>
+    <ul>
+        <li>
+            <a href="{{path('back_AddTheme') }}">ajouter theme </a>
+        </li>
+    </ul>
+
+    <table border="1">
+        <tr>
+            <td> continu </td>
+            <td> date de la question</td>
+            <td> le nombre de like </td>
+            <td> le nombre de dislike </td>
+            <td> action </td>
+        </tr>
+
+        {% for questions in questions %}
+            <tr>
+
+                <td>
+                    {{ questions.contenu }}
+                </td>
+                <td>
+                    {{ questions.dateQuestion|date }}
+                </td>
+
+                <td>
+                    {{ questions.likeQuestion }}
+                </td>
+                <td>
+                    {{ questions.dislikeQuestion }}
+                </td>
+
+                <td><a href="{{ path('back_EditQuestion',{'id':questions.id}) }}"> <img src="{{ asset ('back/img/ed.jpg') }}" width="30" height="30"> </a>
+                    <a href="{{ path('back_DeleteQuestion',{'id':questions.id}) }}"><img src="{{ asset ('back/img/rm.jpg') }}"
+            </tr>
+
+        {% endfor %}
+    </table>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Categorieformations list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libele</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorieFormation in categorieFormations %}
+            <tr>
+                <td><a href="{{ path('categorieformation_show', { 'id': categorieFormation.id }) }}">{{ categorieFormation.id }}</a></td>
+                <td>{{ categorieFormation.libele }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('categorieformation_show', { 'id': categorieFormation.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('categorieformation_edit', { 'id': categorieFormation.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('categorieformation_new') }}">Create a new categorieFormation</a>
+        </li>
+    </ul>
+{% endblock %}

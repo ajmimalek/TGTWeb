@@ -1,0 +1,39 @@
+{% extends 'back.html.twig' %}
+
+{% block egg %}
+    <h1>Categories list</h1>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id_cat</th>
+            <th>Nomcat</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for categorie in categoriePublications %}
+            <tr>
+                <td><a href="{{ path('categorie_index', { 'id_cat': categorie.id }) }}">{{ categorie.id }}</a></td>
+                <td>{{ categorie.nomCat }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('categorie_edit', { 'id_cat': categorie.id }) }}">edit</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('categorie_delete', { 'id_cat': categorie.id }) }}">delete</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('categorie_new') }}">Create a new categorie</a>
+        </li>
+    </ul>
+{% endblock %}
